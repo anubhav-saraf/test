@@ -12,7 +12,8 @@ WITH static_id_and_name AS (
   SELECT 
     1 AS id,
     "abc" AS name,
-    "addr_1" AS address
+    "addr_1" AS address,
+    23 AS val
 
 ),
 
