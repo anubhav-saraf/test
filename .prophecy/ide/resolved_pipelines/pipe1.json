@@ -1,0 +1,51 @@
+{
+  "id" : "pipe1",
+  "metainfo" : {
+    "label" : "pipe1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "gwEcILyE-IWj58igitvPH$$IEi8iJffiUIH-vD0ILLZg" : "models/pipe1/pipe1__Reformat_1.sql",
+      "Reformat_1_3MmmjcuUnQK3REEyfQXIo$$7XbSrxpEGxPEyAWbf2yLX" : "models/pipe1/pipe1__Reformat_1.sql",
+      "5tWKNfAcIB1OfpgtdS1Jp$$pVGSJC2jnGhTt6y5GFnb0" : "models/pipe1/pipe1__Reformat_1.sql"
+    }
+  },
+  "processes" : {
+    "5tWKNfAcIB1OfpgtdS1Jp$$pVGSJC2jnGhTt6y5GFnb0" : {
+      "id" : "5tWKNfAcIB1OfpgtdS1Jp$$pVGSJC2jnGhTt6y5GFnb0",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipe1__Reformat_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipe1__Reformat_1"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "Reformat_1_3MmmjcuUnQK3REEyfQXIo$$7XbSrxpEGxPEyAWbf2yLX" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "Reformat_1_3MmmjcuUnQK3REEyfQXIo$$7XbSrxpEGxPEyAWbf2yLX", "5tWKNfAcIB1OfpgtdS1Jp$$pVGSJC2jnGhTt6y5GFnb0", "gwEcILyE-IWj58igitvPH$$IEi8iJffiUIH-vD0ILLZg" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3MmmjcuUnQK3REEyfQXIo$$7XbSrxpEGxPEyAWbf2yLX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
