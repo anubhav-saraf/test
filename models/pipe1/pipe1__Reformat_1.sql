@@ -11,7 +11,8 @@ WITH static_id_and_name AS (
   {#Provides a fixed default record (id=1, name='abc') to serve as a stable reference or fallback label in reports and joins.#}
   SELECT 
     1 AS id,
-    "abc" AS name
+    "abc" AS name,
+    "addr_1" AS address
 
 ),
 
