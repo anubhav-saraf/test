@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pipe1__Reformat_1"
+- name: "pipe1__Limit_1"
   tags:
   - "prophecy_temp"

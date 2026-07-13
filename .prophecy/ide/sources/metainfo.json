@@ -17,10 +17,14 @@
   "dependenciesContainer" : {
     "dependencies" : { },
     "prophecyProjectDependencies" : {
-      "https://github.com/prophecy-io/prophecy-basics" : "64560"
+      "https://github.com/prophecy-io/prophecy-basics" : "15",
+      "https://github.com/prophecy-io/prophecy-spatial" : "57"
     },
     "dependenciesMetadata" : {
       "https://github.com/prophecy-io/prophecy-basics" : {
+        "autoUpgrade" : true
+      },
+      "https://github.com/prophecy-io/prophecy-spatial" : {
         "autoUpgrade" : true
       }
     }
