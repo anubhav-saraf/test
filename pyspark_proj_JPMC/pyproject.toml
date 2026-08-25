@@ -15,9 +15,11 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.package-dir]
 pyspark_proj_JPMC = "src"
 "pyspark_proj_JPMC.connections" = "connections"
+"prophecy_config_instances" = "prophecy_config_instances"
 
 [tool.setuptools.package-data]
 "pyspark_proj_JPMC.connections" = ["../connections/*"]
+"prophecy_config_instances" = ["**/*"]
 
 [project.scripts]
 p1 = "pyspark_proj_JPMC.pipelines.p1.pipeline:main"
