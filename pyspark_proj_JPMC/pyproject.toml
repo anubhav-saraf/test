@@ -1,0 +1,79 @@
+[project]
+name = "pyspark_proj_JPMC"
+version = "0.0.1"
+description = "Prophecy Pipelines"
+requires-python = ">=3.10"
+dependencies = [
+    "prophecy-libs==2.1.17",
+    "prophecy_automate==1.9.0.dev0"
+]
+
+[build-system]
+requires = ["setuptools>=70.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+pyspark_proj_JPMC = "src"
+"pyspark_proj_JPMC.connections" = "connections"
+
+[tool.setuptools.package-data]
+"pyspark_proj_JPMC.connections" = ["../connections/*"]
+
+[project.scripts]
+p1 = "pyspark_proj_JPMC.pipelines.p1.pipeline:main"
+
+[project.optional-dependencies]
+local = [
+    "pyspark>=3.3.0,<4.0.0",
+    "pandas>=1.0.5",
+    "pyarrow>=4.0.0",
+    "grpcio>=1.48.1"
+]
+test = [
+    "pyspark>=3.3.0,<4.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov",
+    "pytest-html"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["src/**/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["*Test"]
+addopts = [
+    "--cov=pyspark_proj_JPMC.pipelines.p1",
+    "--cov-report=term",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "--cov-report=html",
+    "-v"
+]
+
+[tool.coverage.run]
+source = [
+    "src"
+]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/test_*.py",
+    "*/config/*.py",
+    "*/pipeline.py",
+    "*/__init__.py"
+]
+
+[tool.coverage.paths]
+p1 = [
+    "src/pipelines/p1",
+    "*/site-packages/pyspark_proj_JPMC/pipelines/p1"
+]
+
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == '__main__':",
+    "raise AssertionError",
+    "raise NotImplementedError"
+]

@@ -1,0 +1,48 @@
+fabrics:
+  1:
+    id: "1"
+    connections:
+      ADLS_1:
+        type: "ADLS"
+        properties:
+          accountName: "synapseinternaldev"
+          clientId: "63ffdc73-347c-4194-a0e6-ceee543a2e3e"
+          clientSecret: databricks_secret("ADLS_1", "adls_secret_new")
+          containerName: "landing-zn"
+          tenantId: "393ecdf0-1e48-4763-8537-46c6a427c7fb"
+      databricks_default:
+        type: "databricks"
+        properties:
+          authType: "pat"
+          catalog: "anubhav"
+          clusterId: "0424-102255-jkzbj21e"
+          interimVolume: "/Volumes/anubhav/default"
+          jdbcUrl: "jdbc:databricks://dbc-ac0e9adb-13fb.cloud.databricks.com:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/2dc4d06bcada6a51;"
+          schema: "default"
+          token: databricks_secret("databricks_default", "DATABRICKS_TOKEN")
+      s3:
+        type: "s3"
+        properties:
+          accessKeyID: "AKIAR6ESAR2JNF3QEQHL"
+          bucketName: "qa-prophecy"
+          region: "us-west-1"
+          secretAccessKey: databricks_secret("s3", "AWS_S3")
+      sftp_1:
+        type: "sftp"
+        properties:
+          authMethod: "password"
+          host: "sftp.prophecy.io"
+          password: databricks_secret("sftp_1", "sftp")
+          port: 22
+          username: "admin"
+      snowflake_1:
+        type: "snowflake"
+        properties:
+          account: "https://tu22760.ap-south-1.aws.snowflakecomputing.com"
+          authType: "pwd"
+          database: "QA_DATABASE"
+          password: databricks_secret("snowflake_1", "SF_SDET")
+          role: "ACCOUNTADMIN"
+          schema: "QA_SCHEMA"
+          username: "SDET"
+          warehouse: "COMPUTE_WH"

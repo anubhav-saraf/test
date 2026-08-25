@@ -1,0 +1,79 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false
+  },
+  "processes" : {
+    "sU_VAo6g8LIkQtEA_QCLS$$ix-lkZap7L-k5AFz1G9tu" : {
+      "id" : "sU_VAo6g8LIkQtEA_QCLS$$ix-lkZap7L-k5AFz1G9tu",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "single_record_mock",
+        "x" : -500,
+        "y" : -220,
+        "phase" : 0,
+        "comment" : "Creates a mock record with fixed ID and name for testing purposes.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select 1 as id, \"abc\" as name"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "aaoXKoUUGjdUCoI5DbF2E$$p0SKLNozTqc7vpl7I0ACX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "u97OfC4toOC32eyHI6wem$$YtS4J45uurnxTrMzXyVNb" : {
+      "id" : "u97OfC4toOC32eyHI6wem$$YtS4J45uurnxTrMzXyVNb",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : -340,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "M7ZAsJLyrha-iSeuJhXLF$$IOkV_SRLAxufNt_GFmE1a",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8lBYhc965Lr1iQO1NDhCJ$$lsmIT_8ehBRHdKLx--u4T",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "QZMITyjjPPpmbjgZv0Q-p$$qanf4vlZYPxSqHrSiWxnX",
+    "source" : "sU_VAo6g8LIkQtEA_QCLS$$ix-lkZap7L-k5AFz1G9tu",
+    "sourcePort" : "aaoXKoUUGjdUCoI5DbF2E$$p0SKLNozTqc7vpl7I0ACX",
+    "target" : "u97OfC4toOC32eyHI6wem$$YtS4J45uurnxTrMzXyVNb",
+    "targetPort" : "M7ZAsJLyrha-iSeuJhXLF$$IOkV_SRLAxufNt_GFmE1a"
+  } ],
+  "component" : "Pipeline"
+}
