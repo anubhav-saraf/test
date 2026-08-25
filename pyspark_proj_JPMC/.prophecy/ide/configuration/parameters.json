@@ -1,0 +1,17 @@
+{
+  "schema" : {
+    "type" : "record",
+    "fields" : [ {
+      "name" : "test_config",
+      "kind" : {
+        "type" : "string",
+        "value" : "'string 1'"
+      }
+    } ]
+  },
+  "parameterSets" : [ {
+    "name" : "uat_set",
+    "values" : { }
+  } ],
+  "currentParameterSet" : "uat_set"
+}

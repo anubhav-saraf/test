@@ -49,11 +49,31 @@
         "label" : "Reformat_1",
         "x" : -340,
         "y" : -220,
-        "phase" : 0
+        "phase" : 0,
+        "comment" : "Maps single record data with a configurable value for testing purposes.",
+        "autoUpdateComment" : true
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ ]
+        "columnsSelector" : [ "M7ZAsJLyrha-iSeuJhXLF$$IOkV_SRLAxufNt_GFmE1a##id", "M7ZAsJLyrha-iSeuJhXLF$$IOkV_SRLAxufNt_GFmE1a##name" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "id"
+          },
+          "alias" : "id",
+          "_row_id" : "264221619"
+        }, {
+          "expression" : {
+            "expression" : "name"
+          },
+          "alias" : "name",
+          "_row_id" : "1333902403"
+        }, {
+          "expression" : {
+            "expression" : "{{ var('test_config') }}"
+          },
+          "alias" : "config_val",
+          "_row_id" : "RMyG-qsYp5"
+        } ]
       },
       "ports" : {
         "inputs" : [ {
@@ -66,6 +86,35 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "ILCLJlNlVvIn6C0wMBPt8$$WunyiWN2K9KFgn8Ie6DjP" : {
+      "id" : "ILCLJlNlVvIn6C0wMBPt8$$WunyiWN2K9KFgn8Ie6DjP",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "show_config_values",
+        "x" : -180,
+        "y" : -220,
+        "phase" : 0,
+        "comment" : "Displays selected configuration values from the input data.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "ports" : null,
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "return out0",
+        "script" : "in0.select(\"id\", \"config_val\").show()\n    \nreturn in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "93fc1907m-X2zmKcMMy9W$$KR2sfp9tr-tv6Aa_1xvjO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8HHyuYG_GCU5EvF1oX5XQ$$qqrEPwp7RIASwObBPPzH3",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
@@ -74,6 +123,12 @@
     "sourcePort" : "aaoXKoUUGjdUCoI5DbF2E$$p0SKLNozTqc7vpl7I0ACX",
     "target" : "u97OfC4toOC32eyHI6wem$$YtS4J45uurnxTrMzXyVNb",
     "targetPort" : "M7ZAsJLyrha-iSeuJhXLF$$IOkV_SRLAxufNt_GFmE1a"
+  }, {
+    "id" : "Ez4lHAVLFOboNmph033R0$$4mMER53Eh_xn2knrT1zbY",
+    "source" : "u97OfC4toOC32eyHI6wem$$YtS4J45uurnxTrMzXyVNb",
+    "sourcePort" : "8lBYhc965Lr1iQO1NDhCJ$$lsmIT_8ehBRHdKLx--u4T",
+    "target" : "ILCLJlNlVvIn6C0wMBPt8$$WunyiWN2K9KFgn8Ie6DjP",
+    "targetPort" : "93fc1907m-X2zmKcMMy9W$$KR2sfp9tr-tv6Aa_1xvjO"
   } ],
   "component" : "Pipeline"
 }

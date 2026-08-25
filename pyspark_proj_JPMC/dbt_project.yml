@@ -26,6 +26,12 @@ macro-paths:
 target-path: "target"
 
 # ==================
+# Variable Configs
+# ==================
+vars:
+  test_config: "'string 1'"
+
+# ==================
 # Model Configs
 # ==================
 models:

@@ -1,0 +1,144 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1",
+    "jobId" : "jobs/j1",
+    "name" : "j1",
+    "schedule" : "None",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    }
+  },
+  "processes" : {
+    "dvHRNBfzZuCgb-A56iO0a$$-C1HuoD0lns-VeUj6hKR7" : {
+      "id" : "dvHRNBfzZuCgb-A56iO0a$$-C1HuoD0lns-VeUj6hKR7",
+      "component" : "AutomatePipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 40,
+        "y" : 80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "25tqDWGpWuzPS7X20Wm_b$$JNph_CM4wGU12g9AoCdc3",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "fF0EWtcGAcPWCtPzIrUYH$$hvDjjrKWKStQZXJwDDtLD",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "pipelineParameterSetName" : "default",
+        "projectId" : "112",
+        "pipelineParameterSets" : [ "default" ],
+        "releaseTag" : "",
+        "projectParameterSets" : [ "default" ],
+        "configurations" : {
+          "selectedInstance" : "default",
+          "instances" : { },
+          "overrides" : { },
+          "schema" : [ ]
+        },
+        "projectParameterSetName" : "default",
+        "pipelineId" : ".prophecy/metadata/sqlorchestratorpipeline/p1"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : "O2urX8_pfPF8O4KpepJ9c"
+    },
+    "O2urX8_pfPF8O4KpepJ9c" : {
+      "id" : "O2urX8_pfPF8O4KpepJ9c",
+      "component" : "Cluster",
+      "metadata" : {
+        "label" : "Cluster_1",
+        "slug" : "Cluster_1",
+        "x" : -2280,
+        "y" : -920,
+        "width" : 280,
+        "height" : 280
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "clusterSize" : "small",
+        "existingClusterId" : "0424-102255-jkzbj21e"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
+    }
+  },
+  "connections" : [ ]
+}
