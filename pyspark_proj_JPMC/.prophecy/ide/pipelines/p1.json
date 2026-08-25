@@ -92,7 +92,7 @@
       "component" : "Script",
       "metadata" : {
         "label" : "show_config_values",
-        "x" : -180,
+        "x" : -140,
         "y" : -220,
         "phase" : 0,
         "comment" : "Displays selected configuration values from the input data.",
