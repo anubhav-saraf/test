@@ -1,0 +1,48 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "sobregiro_no_autorizado_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "codigo_sucursal_operacion"
+  dataType:
+    type: "String"
+- name: "sobregiro_autorizado_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "sobregiro_no_autorizado_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "fecha_dato"
+  dataType:
+    type: "Date"
+- name: "acuerdo_sobregiro_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "acuerdo_sobregiro_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "sobregiro_autorizado_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "fecha_vencimiento_linea"
+  dataType:
+    type: "Date"
+- name: "divisa"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "sobregiro_disponible_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "sobregiro_disponible_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

@@ -1,0 +1,18 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods_tarjeta"
+  dataType:
+    type: "String"
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "cantidad_compras_totales"
+  dataType:
+    type: "Integer"
+- name: "pan_hash"
+  dataType:
+    type: "String"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

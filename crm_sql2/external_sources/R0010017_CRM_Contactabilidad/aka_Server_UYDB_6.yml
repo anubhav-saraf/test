@@ -1,0 +1,33 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "localidad"
+  dataType:
+    type: "String"
+- name: "resto_direccion"
+  dataType:
+    type: "String"
+- name: "pais_domicilio"
+  dataType:
+    type: "String"
+- name: "calle_domicilio"
+  dataType:
+    type: "String"
+- name: "numero_puerta"
+  dataType:
+    type: "String"
+- name: "valor"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "tipo_contacto"
+  dataType:
+    type: "String"
+- name: "departamento"
+  dataType:
+    type: "String"
+- name: "codigo_postal"
+  dataType:
+    type: "String"

@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "tipo_producto_comercial"
+  dataType:
+    type: "String"
+- name: "codigo_subproducto"
+  dataType:
+    type: "String"
+- name: "familia_producto_comercial"
+  dataType:
+    type: "String"
+- name: "codigo_destino"
+  dataType:
+    type: "String"
+- name: "descripcion_crm"
+  dataType:
+    type: "String"
+- name: "codigo_producto"
+  dataType:
+    type: "String"
+- name: "sub_tipo_producto_comercial"
+  dataType:
+    type: "String"
+- name: "grupo_producto_comercial"
+  dataType:
+    type: "String"

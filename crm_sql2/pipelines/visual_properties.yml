@@ -1,0 +1,487 @@
+pipelines:
+  O3090017_operacionales_crm_cotizaciones:
+    visualGroups:
+      tCRMcotizaciones:
+        isCollapsed: false
+        height: 398.99993896484375
+        width: 280
+        nodes:
+        - "AlteryxSelect_2"
+  O3090023_operacionales_crm_tarifario_transferencias:
+    visualGroups:
+      tCRMtarifario:
+        height: 280
+        width: 980
+        nodes:
+        - "AlteryxSelect_10"
+        - "CrossTab_6"
+        - "Filter_1"
+        - "MultiFieldFormula_11"
+        - "RecordID_1"
+        - "reformat_1"
+  O3090025_operacionales_crm_matriz_de_productos:
+    visualGroups:
+      Avales_Producto-29:
+        height: 281.20001220703125
+        width: 461.20001220703125
+        nodes:
+        - "aggregate_17_1_1_2"
+        - "filter_18"
+        - "reformat_8_2_1_1_2"
+      Prestamos:
+        height: 1918
+        width: 910.0000610351562
+        nodes:
+        - "Credito_Comercial_producto-32"
+        - "Credito_Consumo_producto-17"
+        - "Credito_GTM_producto-25"
+        - "Credito_Hipotecario_producto-13"
+        - "Credito_Leasing_producto-28"
+        - "Credito_coche_producto-12"
+        - "deduplicate_3"
+        - "filter_15"
+        - "join_12"
+      Garantias_Producto-35:
+        height: 280
+        width: 860
+        nodes:
+        - "aggregate_19"
+        - "aggregate_20"
+        - "filter_22"
+        - "join_14"
+        - "reformat_11"
+      TD_Productos_5-15:
+        height: 400
+        width: 529.9922485351562
+        nodes:
+        - "filter_4"
+        - "reformat_1_2"
+        - "reformat_1_4_1"
+      Nominas_pagadas_y_cobradas_productos_9-18:
+        height: 1347.9862060546875
+        width: 2240.98974609375
+        nodes:
+        - "Aggregate_13"
+        - "Aggregate_13_1"
+        - "Aggregate_13_1_1"
+        - "Deduplicate_2"
+        - "Deduplicate_2_2"
+        - "Filter_12_1"
+        - "OrderBy_1_1_1"
+        - "Pivot_1"
+        - "Pivot_1_1"
+        - "Pivot_1_1_2"
+        - "RecordID_1_1_1"
+        - "Reformat_6"
+        - "Reformat_7"
+        - "Reformat_7_1"
+        - "Sample_1_1_1"
+        - "UnionByName_2"
+        - "UnionByName_3"
+        - "UnionByName_3_1"
+        - "aggregate_12"
+        - "aggregate_12_1"
+        - "aggregate_12_1_1"
+        - "aggregate_1_1_1"
+        - "filter_14"
+        - "filter_14_2"
+        - "join_10"
+        - "join_10_1"
+        - "join_10_1_1"
+        - "join_11"
+        - "join_11_1"
+        - "join_11_1_1"
+        - "join_1_1_1"
+        - "reformat_5"
+        - "reformat_5_1"
+        - "reformat_5_1_2"
+      Trilogy_Producto_1:
+        height: 541.5999755859375
+        width: 800
+        nodes:
+        - "aggregate_3"
+        - "aggregate_4"
+        - "aggregate_5"
+        - "filter_5"
+        - "filter_5_1"
+        - "filter_6"
+        - "join_4"
+        - "join_5"
+        - "join_6"
+        - "join_6_1"
+        - "reformat_1_2_1"
+        - "reformat_1_3"
+        - "reformat_1_3_1"
+      Credito_GTM_producto-25:
+        height: 280
+        width: 507.4129638671875
+        nodes:
+        - "filter_16_1"
+        - "reformat_8_1"
+      productos_inversion_7-8:
+        height: 476.0332946777344
+        width: 998.6685180664062
+        nodes:
+        - "Aggregate_10"
+        - "Filter_9_2"
+        - "Filter_9_2_1"
+        - "aggregate_11"
+        - "aggregate_9"
+        - "aggregate_9_1"
+        - "filter_13"
+        - "join_9"
+        - "join_9_1"
+        - "reformat_4"
+        - "reformat_4_1"
+      Pago_de_impuestos_producto-33:
+        height: 462.4463806152344
+        width: 2362.3408203125
+        nodes:
+        - "Filter_12_1_1_1_1"
+        - "OrderBy_1_1_1_1_1_1"
+        - "Pivot_1_1_2_1_1_1_2"
+        - "RecordID_1_1_1_1_1_1"
+        - "Reformat_10"
+        - "Reformat_7_1_1_2"
+        - "Sample_1_1_1_1_1_1"
+        - "UnionByName_4_2"
+        - "aggregate_14_2"
+        - "aggregate_15_2"
+        - "aggregate_1_1_1_1_1_1"
+        - "filter_21"
+        - "join_10_2_2"
+        - "join_11_2_2"
+        - "join_1_1_1_1_1_1"
+        - "reformat_5_1_2_1_1_1_2"
+      Cuentas_activas_Producto-26:
+        height: 280
+        width: 480
+        nodes:
+        - "aggregate_17_1_1_1_1"
+        - "filter_17_1"
+        - "reformat_8_2_1_1_1_1"
+      Tarjetas:
+        height: 2025.199951171875
+        width: 880
+        nodes:
+        - "TC_Productos_4-14-36-37-38-39"
+        - "TD_Productos_5-15"
+        - "Tarjetas_corporativas_producto_21"
+        - "Trilogy_Producto_1"
+      Credito_Consumo_producto-17:
+        height: 280
+        width: 504.9342346191406
+        nodes:
+        - "aggregate_17_1"
+        - "filter_16_1_1_1_1"
+        - "reformat_8_2_1"
+      Credito_Comercial_producto-32:
+        height: 280
+        width: 505.5448303222656
+        nodes:
+        - "aggregate_17_1_1"
+        - "filter_16_1_1_1_1_1"
+        - "reformat_8_2_1_1"
+      Seguros_productos_6-10-11-16-20-30:
+        height: 363.2445068359375
+        width: 493.9974365234375
+        nodes:
+        - "Filter_9"
+        - "filter_8"
+        - "filter_8_1"
+        - "reformat_2"
+        - "reformat_2_1"
+      Tarjetas_corporativas_producto_21:
+        height: 365.20001220703125
+        width: 800
+        nodes:
+        - "Join_7"
+        - "aggregate_6"
+        - "aggregate_7"
+        - "filter_6_1"
+        - "filter_7"
+        - "reformat_1_2_1_1"
+      Sobregiros_Producto-31:
+        height: 280
+        width: 338.68975830078125
+        nodes:
+        - "filter_19"
+        - "reformat_9"
+      Credito_Leasing_producto-28:
+        height: 280.2579040527344
+        width: 506.3935241699219
+        nodes:
+        - "filter_16_1_1"
+        - "reformat_8_1_1"
+      Valores_al_cobro_Producto-27:
+        height: 283.9365234375
+        width: 480
+        nodes:
+        - "aggregate_18"
+        - "filter_20"
+        - "reformat_9_1"
+      Descuento_de_cheques_Producto-23:
+        height: 274.12396240234375
+        width: 481.85009765625
+        nodes:
+        - "aggregate_17_1_1_1"
+        - "filter_17"
+        - "reformat_8_2_1_1_1"
+      PagoProveedores_producto_22:
+        height: 713.0377197265625
+        width: 2036.9007568359375
+        nodes:
+        - "Filter_12_1_1"
+        - "OrderBy_1_1_1_1"
+        - "Pivot_1_1_2_1"
+        - "Pivot_1_1_2_1_1"
+        - "Pivot_1_1_2_1_1_1"
+        - "RecordID_1_1_1_1"
+        - "Reformat_7_1_1"
+        - "Sample_1_1_1_1"
+        - "UnionByName_4"
+        - "aggregate_14"
+        - "aggregate_15"
+        - "aggregate_1_1_1_1"
+        - "join_10_2"
+        - "join_11_2"
+        - "join_1_1_1_1"
+        - "reformat_5_1_2_1"
+        - "reformat_5_1_2_1_1"
+        - "reformat_5_1_2_1_1_1"
+      Credito_Hipotecario_producto-13:
+        height: 280
+        width: 505.9226379394531
+        nodes:
+        - "aggregate_17"
+        - "filter_16_1_1_1"
+        - "reformat_8_2"
+      Credito_coche_producto-12:
+        height: 280
+        width: 509.8156433105469
+        nodes:
+        - "aggregate_16"
+        - "filter_16"
+        - "reformat_8"
+      TC_Productos_4-14-36-37-38-39:
+        height: 550.868408203125
+        width: 534.441162109375
+        nodes:
+        - "filter_2"
+        - "filter_3"
+        - "reformat_1"
+        - "reformat_1_1"
+        - "reformat_1_4"
+      Debitos_automaticos_productos_2-3:
+        height: 505.20001220703125
+        width: 1654.4000244140625
+        nodes:
+        - "Filter_12"
+        - "Filter_9_1"
+        - "Join_8"
+        - "OrderBy_1_1"
+        - "RecordID_1_1"
+        - "Sample_1_1"
+        - "aggregate_1_1"
+        - "aggregate_8"
+        - "filter_10"
+        - "filter_10_1"
+        - "filter_10_1_1"
+        - "join_1_1"
+        - "reformat_3"
+        - "reformat_3_1"
+      TPV_producto_22_1:
+        height: 728.1787109375
+        width: 2040
+        nodes:
+        - "Filter_12_1_1_1"
+        - "OrderBy_1_1_1_1_1"
+        - "Pivot_1_1_2_1_1_1_1"
+        - "RecordID_1_1_1_1_1"
+        - "Reformat_7_1_1_1"
+        - "Sample_1_1_1_1_1"
+        - "UnionByName_4_1"
+        - "aggregate_14_1"
+        - "aggregate_15_1"
+        - "aggregate_1_1_1_1_1"
+        - "join_10_2_1"
+        - "join_11_2_1"
+        - "join_1_1_1_1_1"
+        - "reformat_5_1_2_1_1_1_1"
+  O3090024_operacionales_crm_volumenes_y_rentabilidad:
+    visualGroups:
+      VolumenesTotales:
+        height: 699.280029296875
+        width: 466.79998779296875
+        nodes:
+        - "Pivot_1"
+        - "Pivot_1_1"
+        - "Pivot_1_1_1"
+        - "Pivot_1_1_1_1"
+        - "filter_1"
+        - "reformat_1"
+        - "reformat_1_1"
+        - "reformat_1_1_1"
+        - "reformat_1_1_1_1"
+      VolumenesTotales_1:
+        height: 698.1311645507812
+        width: 467.6843566894531
+        nodes:
+        - "Pivot_1_1_1_1_2"
+        - "Pivot_1_1_1_3"
+        - "Pivot_1_1_2"
+        - "Pivot_1_2"
+        - "filter_1_1"
+        - "reformat_1_1_1_1_1"
+        - "reformat_1_1_1_2"
+        - "reformat_1_1_2"
+        - "reformat_1_2"
+  O3090018_operacionales_crm_contactabilidad:
+    visualGroups:
+      tCRMcontactabilidad:
+        height: 280
+        width: 360
+        nodes:
+        - "Filter_1"
+        - "Formula_3_0"
+  O3090019_operacionales_crm_vulnerabilidades:
+    annotations:
+      Comment_0:
+        comment: "El flujo es decomisado por que ya no se mide por metricas sino por\
+          \ marcas que hacen los oficiales de cuenta en el CRM."
+  O3090020_operacionales_crm_endeudamiento_y_contingencias:
+    visualGroups:
+      tCRMendeudamientocontingencias:
+        height: 580
+        width: 680
+        nodes:
+        - "AlteryxSelect_11"
+        - "AlteryxSelect_16"
+        - "Filter_2"
+        - "Filter_7"
+        - "Filter_8"
+        - "Summarize_1"
+        - "Summarize_6"
+        - "join_1"
+  O3090026_operacionales_crm_matriz_de_servicios:
+    visualGroups:
+      VisualGroup_1:
+        height: 739.3201293945312
+        width: 1564.1234130859375
+        nodes:
+        - "Filter_12_1_1_1_1_1_1"
+        - "Filter_7"
+        - "OrderBy_1_1_1_1_1_1_1_1"
+        - "RecordID_1_1_1_1_1_1_1_1"
+        - "Sample_1_1_1_1_1_1_1_1"
+        - "Sample_8"
+        - "Sample_9"
+        - "aggregate_1_1_1_1_1_1_1_1"
+        - "aggregate_8"
+        - "aggregate_8_1"
+        - "aggregate_9"
+        - "join_1_1_1_1_1_1_1_1"
+        - "join_9"
+        - "reformat_10"
+        - "reformat_9"
+      Cambios_de_moneda:
+        height: 526.7417602539062
+        width: 1416.29296875
+        nodes:
+        - "Pivot_1_1_2_1_1_1_1_1"
+        - "Reformat_7_1_1_1_1_1"
+        - "Union_2"
+        - "aggregate_14_1_1_1"
+        - "aggregate_15_1_1_1"
+        - "filter_6"
+        - "filter_6_1"
+        - "filter_6_filter_6_1"
+        - "join_10_2_1_1_1"
+        - "join_11_2_1_1_1"
+        - "reformat_5_1_2_1_1_1_1_1"
+      Transferencias_automatismos_pagos_servicios:
+        height: 461.6681213378906
+        width: 1447.56884765625
+        nodes:
+        - "Filter_8"
+        - "Pivot_1_1_2_1_1_2"
+        - "Reformat_7_1_1_2"
+        - "Union_1"
+        - "aggregate_14_2"
+        - "aggregate_15_2"
+        - "join_10_2_2"
+        - "join_11_2_2"
+        - "reformat_11"
+        - "reformat_5_1_2_1_1_2"
+      Transacciones_voluntarias_Servicios-2-3-5:
+        height: 1146.74169921875
+        width: 2515.99609375
+        nodes:
+        - "Cambios_de_moneda"
+        - "Filter_12_1_1_1_1_1"
+        - "OrderBy_1_1_1_1_1_1_1"
+        - "RecordID_1_1_1_1_1_1_1"
+        - "Sample_1_1_1_1_1_1_1"
+        - "Transferencias_automatismos_pagos_servicios"
+        - "aggregate_1_1_1_1_1_1_1"
+        - "join_1_1_1_1_1_1_1"
+      Atencion_en_sucursal_Servicio-4:
+        height: 1046.5853271484375
+        width: 1144.705322265625
+        nodes:
+        - "Join_5"
+        - "Pivot_1"
+        - "Reformat_5"
+        - "Sample_2"
+        - "Sample_3"
+        - "Sample_4"
+        - "Sample_5"
+        - "Sample_6"
+        - "aggregate_4"
+        - "aggregate_5"
+        - "aggregate_5_1"
+        - "aggregate_6"
+        - "filter_3"
+        - "filter_3_1"
+        - "join_6"
+        - "join_7"
+        - "reformat_4"
+        - "reformat_4_1"
+        - "reformat_4_1_1"
+        - "reformat_6"
+      Digital_Servicio-1:
+        height: 820
+        width: 2040
+        nodes:
+        - "Filter_12_1_1_1_1"
+        - "OrderBy_1_1_1_1_1_1"
+        - "RecordID_1_1_1_1_1_1"
+        - "Reformat_1"
+        - "Reformat_2"
+        - "Sample_1"
+        - "Sample_1_1_1_1_1_1"
+        - "aggregate_1"
+        - "aggregate_1_1_1_1_1_1"
+        - "aggregate_2"
+        - "aggregate_3"
+        - "filter_1"
+        - "filter_1_1"
+        - "filter_2"
+        - "join_1"
+        - "join_1_1_1_1_1_1"
+        - "join_2"
+        - "join_3"
+        - "join_4"
+        - "reformat_3"
+        - "reformat_3_1"
+      Atencion_cabinas_Servicio-4:
+        height: 340
+        width: 1140
+        nodes:
+        - "Filter_4"
+        - "Reformat_7"
+        - "Sample_7"
+        - "aggregate_7"
+        - "filter_3_2"
+        - "join_8"
+        - "reformat_8"

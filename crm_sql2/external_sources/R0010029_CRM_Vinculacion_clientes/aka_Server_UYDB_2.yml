@@ -1,0 +1,24 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "clave_cod_requisito"
+  dataType:
+    type: "String"
+- name: "codigo_proceso"
+  dataType:
+    type: "String"
+- name: "desc_subrequisito"
+  dataType:
+    type: "String"
+- name: "clave_cod_subrequisito"
+  dataType:
+    type: "String"
+- name: "desc_requisito"
+  dataType:
+    type: "String"
+- name: "desc_colectivo"
+  dataType:
+    type: "String"
+- name: "cod_colectivo"
+  dataType:
+    type: "String"

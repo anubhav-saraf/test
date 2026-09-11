@@ -1,0 +1,36 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "cargo_cuenta_pesos"
+  dataType:
+    type: "String"
+- name: "cantidad_de_pagos"
+  dataType:
+    type: "Integer"
+- name: "cargo_cuenta_dolares"
+  dataType:
+    type: "String"
+- name: "tipo_servicio"
+  dataType:
+    type: "String"
+- name: "esta_activo"
+  dataType:
+    type: "Boolean"
+- name: "fecha_alta"
+  dataType:
+    type: "Date"
+- name: "numero_referencia"
+  dataType:
+    type: "String"
+- name: "nombre_proveedor"
+  dataType:
+    type: "String"
+- name: "importe_abonado_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "servicio"
+  dataType:
+    type: "String"

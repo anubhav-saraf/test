@@ -1,0 +1,15 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "monto_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "fecha_operacion"
+  dataType:
+    type: "Date"
+- name: "tipo_transaccion"
+  dataType:
+    type: "String"

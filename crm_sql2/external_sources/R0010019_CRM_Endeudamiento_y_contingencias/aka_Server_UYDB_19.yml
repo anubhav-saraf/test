@@ -1,0 +1,93 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "pais_documento"
+  dataType:
+    type: "String"
+- name: "codigo_segmento"
+  dataType:
+    type: "String"
+- name: "codigo_oficial_comercial"
+  dataType:
+    type: "String"
+- name: "pais_nacimiento"
+  dataType:
+    type: "String"
+- name: "pais_residencia"
+  dataType:
+    type: "String"
+- name: "segundo_apellido"
+  dataType:
+    type: "String"
+- name: "descripcion_segmento"
+  dataType:
+    type: "String"
+- name: "codigo_universitario"
+  dataType:
+    type: "String"
+- name: "nombre_oficial_riesgos"
+  dataType:
+    type: "String"
+- name: "primer_apellido"
+  dataType:
+    type: "String"
+- name: "nombre_fantasia"
+  dataType:
+    type: "String"
+- name: "codigo_team"
+  dataType:
+    type: "String"
+- name: "codigo_oficial_riesgos"
+  dataType:
+    type: "String"
+- name: "nombre_completo"
+  dataType:
+    type: "String"
+- name: "es_refundido"
+  dataType:
+    type: "Boolean"
+- name: "descripcion_subsegmento"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "edad"
+  dataType:
+    type: "Integer"
+- name: "nombre_oficial_comercial"
+  dataType:
+    type: "String"
+- name: "pais_tipo_numero_documento"
+  dataType:
+    type: "String"
+- name: "numero_documento"
+  dataType:
+    type: "String"
+- name: "nombre_persona"
+  dataType:
+    type: "String"
+- name: "fecha_ingreso"
+  dataType:
+    type: "Date"
+- name: "es_residente"
+  dataType:
+    type: "String"
+- name: "es_fallecido"
+  dataType:
+    type: "Boolean"
+- name: "tipo_persona"
+  dataType:
+    type: "String"
+- name: "codigo_subsegmento"
+  dataType:
+    type: "String"
+- name: "ingresos_facturacion"
+  dataType:
+    type: "Decimal"
+- name: "fecha_nacimiento"
+  dataType:
+    type: "Date"
+- name: "tipo_documento"
+  dataType:
+    type: "String"

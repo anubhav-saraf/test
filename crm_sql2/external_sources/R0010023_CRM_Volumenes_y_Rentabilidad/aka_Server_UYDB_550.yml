@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "fecha_dato"
+  dataType:
+    type: "Date"
+- name: "comisiones_usd"
+  dataType:
+    type: "Decimal"
+- name: "margen_activo_usd"
+  dataType:
+    type: "Decimal"
+- name: "margen_pasivo_usd"
+  dataType:
+    type: "Decimal"
+- name: "mob_usd"
+  dataType:
+    type: "Decimal"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "trading_cambio_usd"
+  dataType:
+    type: "Decimal"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

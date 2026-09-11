@@ -1,0 +1,63 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods_tarjeta"
+  dataType:
+    type: "String"
+- name: "motivo_baja_contrato"
+  dataType:
+    type: "String"
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "es_titular"
+  dataType:
+    type: "Boolean"
+- name: "bloqueo_soft_tarjeta"
+  dataType:
+    type: "Boolean"
+- name: "idf_pers_ods_contrato"
+  dataType:
+    type: "String"
+- name: "bloqueo_duro_contrato"
+  dataType:
+    type: "Boolean"
+- name: "cantidad_compras_totales"
+  dataType:
+    type: "Integer"
+- name: "fecha_baja_contrato"
+  dataType:
+    type: "Date"
+- name: "codigo_subproducto"
+  dataType:
+    type: "String"
+- name: "codigo_bloqueo_contrato"
+  dataType:
+    type: "Double"
+- name: "pan_hash"
+  dataType:
+    type: "String"
+- name: "tipo_tarjeta"
+  dataType:
+    type: "String"
+- name: "fecha_alta_contrato"
+  dataType:
+    type: "Date"
+- name: "limite_tarjeta"
+  dataType:
+    type: "Decimal"
+- name: "bloqueo_soft_contrato"
+  dataType:
+    type: "Boolean"
+- name: "condicion_economica"
+  dataType:
+    type: "String"
+- name: "tarjeta_transaccional_mes"
+  dataType:
+    type: "Boolean"
+- name: "codigo_producto"
+  dataType:
+    type: "String"
+- name: "bloqueo_duro_tarjeta"
+  dataType:
+    type: "Boolean"

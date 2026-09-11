@@ -1,0 +1,6 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"

@@ -1,0 +1,21 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "numero_persona"
+  dataType:
+    type: "String"
+- name: "numero_secuencial_cliente"
+  dataType:
+    type: "Integer"
+- name: "codigo_relacion"
+  dataType:
+    type: "Integer"
+- name: "numero_garantia"
+  dataType:
+    type: "Integer"
+- name: "idf_pers_ods_garantizado"
+  dataType:
+    type: "String"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

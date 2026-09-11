@@ -1,0 +1,4775 @@
+---
+version: 2
+sources:
+- name: "transpiled_sources"
+  database: "dev_ref_control"
+  schema: "prophecy_tmp"
+  config:
+    enabled: true
+  tables: []
+- name: "pro_business_externos"
+  database: "pro_business"
+  schema: "externos"
+  tables:
+  - name: "externos_bcu_tipo_de_cambio"
+    description: ""
+    identifier: "externos_bcu_tipo_de_cambio"
+    config:
+      tags:
+      - "pipeline:R0010016_CRM_Cotizaciones"
+      - "pipeline:O3090017_operacionales_crm_cotizaciones"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "codigo_moneda"
+      description: "Código de la moneda utilizada para el arbitraje vs UYU. Tabla\
+        \ TCDT080"
+      dataType:
+        type: "String"
+    - name: "tipo_de_cambio_local"
+      description: "Tipo de cambio de cierre del BCU."
+      dataType:
+        type: "Double"
+    - name: "fecha_primero_mes"
+      description: "Fecha del inicio del mes"
+      dataType:
+        type: "Date"
+    - name: "tipo_cambio_cierre_espana"
+      description: "Tipo de cambio de cierre informado por la corporación."
+      dataType:
+        type: "Double"
+    - name: "tipo_cambio_promedio_espana"
+      description: "Tipo de cambio de medio informado por la corporación."
+      dataType:
+        type: "Double"
+    - name: "tipo_cambio_cierre_espana_euro"
+      description: "Tipo de cambio de cierre informado por la corporación."
+      dataType:
+        type: "Double"
+    - name: "tipo_cambio_promedio_espana_euro"
+      description: "Tipo de cambio de medio informado por la corporación."
+      dataType:
+        type: "Double"
+    - name: "coeficiente_origen_a_usd"
+      description: "Campo coeficiente_origen_a_usd de tipo DoubleType()"
+      dataType:
+        type: "Double"
+    - name: "coeficiente_origen_a_euro"
+      description: "Campo coeficiente_origen_a_euro de tipo DoubleType()"
+      dataType:
+        type: "Double"
+    - name: "coeficiente_origen_a_cierre_espana"
+      description: "coeficiente para arbitrar moneda de origen a cierre españa"
+      dataType:
+        type: "Double"
+    - name: "coeficiente_origen_a_promedio_espana"
+      description: "coeficiente para arbitrar moneda de origen a promerdio españa"
+      dataType:
+        type: "Double"
+    - name: "coef_origen_a_cierre_espana_euro"
+      description: "Campo coef_origen_a_cierre_espana_euro de tipo DoubleType()"
+      dataType:
+        type: "Double"
+    - name: "coef_origen_a_promedio_espana_euro"
+      description: "Campo coef_origen_a_promedio_espana_euro de tipo DoubleType()"
+      dataType:
+        type: "Double"
+    type: "table"
+- name: "dev_application_operationals_crm"
+  database: "dev_application_operationals"
+  schema: "crm"
+  tables:
+  - name: "t_CRM_cotizaciones"
+    identifier: "t_CRM_cotizaciones"
+    config:
+      tags:
+      - "pipeline:R0010016_CRM_Cotizaciones"
+      - "pipeline:O3090017_operacionales_crm_cotizaciones"
+    columns:
+    - name: "VAL_CZA"
+      dataType:
+        type: "Double"
+    - name: "COD_DIVISA"
+      dataType:
+        type: "String"
+    - name: "FEC_DATA"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "t_CRM_contactabilidad"
+    identifier: "t_CRM_contactabilidad"
+    config:
+      tags:
+      - "pipeline:O3090018_operacionales_crm_contactabilidad"
+    columns:
+    - name: "idf_pers_ods"
+      dataType:
+        type: "String"
+    - name: "tipo_contacto"
+      dataType:
+        type: "String"
+    - name: "valor"
+      dataType:
+        type: "String"
+    - name: "calle_domicilio"
+      dataType:
+        type: "String"
+    - name: "numero_puerta"
+      dataType:
+        type: "String"
+    - name: "resto_direccion"
+      dataType:
+        type: "String"
+    - name: "localidad"
+      dataType:
+        type: "String"
+    - name: "departamento"
+      dataType:
+        type: "String"
+    - name: "codigo_postal"
+      dataType:
+        type: "String"
+    - name: "pais_domicilio"
+      dataType:
+        type: "String"
+    - name: "codigo_tipo_contacto"
+      dataType:
+        type: "SmallInt"
+    type: "table"
+  - name: "t_CRM_endeudamiento_contingencias"
+    identifier: "t_CRM_endeudamiento_contingencias"
+    config:
+      tags:
+      - "pipeline:O3090020_operacionales_crm_endeudamiento_y_contingencias"
+    columns:
+    - name: "idf_pers_ods"
+      dataType:
+        type: "String"
+    - name: "Endeudamiento"
+      dataType:
+        type: "Decimal(20, 2)"
+    - name: "Contingencias"
+      dataType:
+        type: "Decimal(20, 2)"
+    type: "table"
+  - name: "t_CRM_Oficial_Team_v2"
+    identifier: "t_CRM_Oficial_Team_v2"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "fecha_dato"
+      dataType:
+        type: "Date"
+    - name: "CodOficial"
+      dataType:
+        type: "String"
+    - name: "NTNAME"
+      dataType:
+        type: "String"
+    - name: "usuario_AD"
+      dataType:
+        type: "String"
+    - name: "CodTeam"
+      dataType:
+        type: "String"
+    - name: "DescTeam"
+      dataType:
+        type: "String"
+    - name: "DescOficial"
+      dataType:
+        type: "String"
+    - name: "OficialNombre"
+      dataType:
+        type: "String"
+    - name: "OficialPrimerApellido"
+      dataType:
+        type: "String"
+    - name: "OficialSegundoApellido"
+      dataType:
+        type: "String"
+    - name: "DescZona"
+      dataType:
+        type: "String"
+    - name: "DescLinea"
+      dataType:
+        type: "String"
+    - name: "EsGerente"
+      dataType:
+        type: "Boolean"
+    - name: "EsPyme"
+      dataType:
+        type: "Boolean"
+    - name: "CRM_Perfil"
+      dataType:
+        type: "Integer"
+    - name: "access"
+      dataType:
+        type: "String"
+    - name: "SeguridadObjeto"
+      dataType:
+        type: "Integer"
+    - name: "CentroSelect"
+      dataType:
+        type: "Integer"
+    - name: "CRM_Acceso"
+      dataType:
+        type: "Integer"
+    - name: "NPS_Acceso"
+      dataType:
+        type: "Integer"
+    - name: "pCambioOfi"
+      dataType:
+        type: "Integer"
+    - name: "CodOficialSuperior"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "t_CRM_tarifario"
+    identifier: "t_CRM_tarifario"
+    config:
+      tags:
+      - "pipeline:O3090023_operacionales_crm_tarifario_transferencias"
+    columns:
+    - name: "idf_pers_ods"
+      dataType:
+        type: "String"
+    - name: "headers"
+      dataType:
+        type: "String"
+    - name: "tarifa_1"
+      dataType:
+        type: "String"
+    - name: "tarifa_2"
+      dataType:
+        type: "String"
+    - name: "tarifa_3"
+      dataType:
+        type: "String"
+    - name: "tarifa_4"
+      dataType:
+        type: "String"
+    - name: "tarifa_5"
+      dataType:
+        type: "String"
+    - name: "tarifa_6"
+      dataType:
+        type: "String"
+    - name: "tarifa_7"
+      dataType:
+        type: "String"
+    - name: "tarifa_8"
+      dataType:
+        type: "String"
+    - name: "tarifa_9"
+      dataType:
+        type: "String"
+    - name: "tarifa_10"
+      dataType:
+        type: "String"
+    - name: "tarifa_11"
+      dataType:
+        type: "String"
+    - name: "tarifa_12"
+      dataType:
+        type: "String"
+    - name: "tarifa_13"
+      dataType:
+        type: "String"
+    - name: "tarifa_14"
+      dataType:
+        type: "String"
+    - name: "tarifa_15"
+      dataType:
+        type: "String"
+    - name: "tarifa_16"
+      dataType:
+        type: "String"
+    - name: "tarifa_17"
+      dataType:
+        type: "String"
+    - name: "tarifa_18"
+      dataType:
+        type: "String"
+    - name: "tarifa_19"
+      dataType:
+        type: "String"
+    - name: "tarifa_20"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "dev_prueba_crm"
+    identifier: "prueba_borrar"
+    columns:
+    - name: "codigo_oficial"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      dataType:
+        type: "Date"
+    - name: "nombre_oficial_corto"
+      dataType:
+        type: "String"
+    - name: "codigo_team_origen"
+      dataType:
+        type: "String"
+    - name: "linea"
+      dataType:
+        type: "String"
+    - name: "grupo_sucursales"
+      dataType:
+        type: "String"
+    - name: "es_gerente_sucursal"
+      dataType:
+        type: "Boolean"
+    - name: "es_pymes"
+      dataType:
+        type: "Boolean"
+    - name: "descripcion_team_origen"
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial"
+      dataType:
+        type: "String"
+    - name: "rol_detalle"
+      dataType:
+        type: "String"
+    - name: "codigo_team_actual"
+      dataType:
+        type: "String"
+    - name: "descripcion_team_actual"
+      dataType:
+        type: "String"
+    - name: "rol_crm"
+      dataType:
+        type: "String"
+    - name: "perfil_crm"
+      dataType:
+        type: "Integer"
+    - name: "zona"
+      dataType:
+        type: "String"
+    - name: "access"
+      dataType:
+        type: "String"
+    - name: "codigo_rol_crm"
+      dataType:
+        type: "Integer"
+    - name: "codigo_oficial_superior"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "t_CRM_VolumenyRentabilidad"
+    identifier: "t_CRM_VolumenyRentabilidad"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+    columns:
+    - name: "idf_pers_ods"
+      dataType:
+        type: "String"
+    - name: "Tipo"
+      dataType:
+        type: "String"
+    - name: "Actual"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes1"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes2"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes3"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes4"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes5"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes6"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes7"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes8"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes9"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes10"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes11"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes12"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes13"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes14"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes15"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes16"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes17"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes18"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes19"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes20"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes21"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes22"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes23"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes24"
+      dataType:
+        type: "Decimal(38, 4)"
+    type: "table"
+  - name: "t_CRM_VolumenyRentabilidad_primer_titular"
+    identifier: "t_CRM_VolumenyRentabilidad_primer_titular"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+    columns:
+    - name: "idf_pers_ods"
+      dataType:
+        type: "String"
+    - name: "Tipo"
+      dataType:
+        type: "String"
+    - name: "Actual"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes1"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes2"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes3"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes4"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes5"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes6"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes7"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes8"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes9"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes10"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes11"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes12"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes13"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes14"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes15"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes16"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes17"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes18"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes19"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes20"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes21"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes22"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes23"
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "Mes24"
+      dataType:
+        type: "Decimal(38, 4)"
+    type: "table"
+  - name: "t_CRM_Servicios"
+    identifier: "t_CRM_Servicios"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns: []
+    type: "table"
+- name: "pro_business_personas"
+  database: "pro_business"
+  schema: "personas"
+  tables:
+  - name: "personas_contactabilidad"
+    description: ""
+    identifier: "personas_contactabilidad"
+    config:
+      tags:
+      - "pipeline:O3090018_operacionales_crm_contactabilidad"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "tipo_contacto"
+      description: "Identifica que tipo de medio de contacto tiene el registro (Telé\
+        fono, mail, dirección)"
+      dataType:
+        type: "String"
+    - name: "valor_contacto"
+      description: "Identifica el valor del contacto. En el caso de direcciones este\
+        \ campo viaja vacío"
+      dataType:
+        type: "String"
+    - name: "fecha_alta_contacto"
+      description: "Fecha en la cual fue dado de alta en el sistema el valor_contacto."
+      dataType:
+        type: "Date"
+    - name: "codigo_origen"
+      description: "Identifica el código del sistema en el cual el registro fue cargado."
+      dataType:
+        type: "SmallInt"
+    - name: "descripcion_origen"
+      description: "Describe el campo codigo_origen."
+      dataType:
+        type: "String"
+    - name: "descripcion_origen_extendido"
+      description: "Da más información sobre el campo descripcion_origen, en el caso\
+        \ de Altair detalla la tabla de donde sale el dato."
+      dataType:
+        type: "String"
+    - name: "calle_domicilio"
+      description: "Detalla la calle del domicilio."
+      dataType:
+        type: "String"
+    - name: "numero_puerta"
+      description: "Detalla el numero de puerta del domicilio."
+      dataType:
+        type: "String"
+    - name: "resto_direccion"
+      description: "Campo adicional para identificar propiedades que con calle y numero\
+        \ de puerta no pueda ser identificada por ejemplo apartamentos."
+      dataType:
+        type: "String"
+    - name: "localidad"
+      description: "Detalla la localidad del domicilio."
+      dataType:
+        type: "String"
+    - name: "descripcion_departamento"
+      description: "Departamento del domicilio del cliente."
+      dataType:
+        type: "String"
+    - name: "codigo_postal"
+      description: "Detalla el código postal del domicilio."
+      dataType:
+        type: "String"
+    - name: "pais_domicilio"
+      description: "Detalla el país donde se encuentra el domicilio."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "personas_inventario"
+    description: ""
+    identifier: "personas_inventario"
+    config:
+      tags:
+      - "pipeline:O3090020_operacionales_crm_endeudamiento_y_contingencias"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "numero_persona"
+      description: "Número de persona"
+      dataType:
+        type: "String"
+    - name: "pais_documento"
+      description: "País documento identidad"
+      dataType:
+        type: "String"
+    - name: "tipo_documento"
+      description: "Tipo de documento de identidad"
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de documento identidad"
+      dataType:
+        type: "String"
+    - name: "nombre_completo"
+      description: "Nombre completo para PF y PJ"
+      dataType:
+        type: "String"
+    - name: "nombre_persona"
+      description: "Nombre de la persona."
+      dataType:
+        type: "String"
+    - name: "primer_apellido"
+      description: "Primer apellido de la persona."
+      dataType:
+        type: "String"
+    - name: "segundo_apellido"
+      description: "Segundo apellido de la persona."
+      dataType:
+        type: "String"
+    - name: "nombre_fantasia"
+      description: "Nombre fantasía"
+      dataType:
+        type: "String"
+    - name: "fecha_nacimiento"
+      description: "Fecha nacimiento"
+      dataType:
+        type: "Date"
+    - name: "edad"
+      description: "Edad calculada según fecha de nacimiento"
+      dataType:
+        type: "SmallInt"
+    - name: "sexo"
+      description: "Genero (H/M)"
+      dataType:
+        type: "String"
+    - name: "estado_civil"
+      description: "Estado civil (Tabla 0116)"
+      dataType:
+        type: "String"
+    - name: "tipo_persona"
+      description: "Tipo Persona (Física o Jurídica)"
+      dataType:
+        type: "String"
+    - name: "forma_juridica"
+      description: "Forma jurídica (Tabla 0231)"
+      dataType:
+        type: "String"
+    - name: "pais_nacimiento"
+      description: "País nacimiento"
+      dataType:
+        type: "String"
+    - name: "pais_residencia"
+      description: "País de residencia fiscal"
+      dataType:
+        type: "String"
+    - name: "es_residente"
+      description: "Métrica calculada según país de residencia"
+      dataType:
+        type: "String"
+    - name: "sector_bcu"
+      description: "Sector de actividad criterio BCU"
+      dataType:
+        type: "String"
+    - name: "codigo_actividad_bcu"
+      description: "Código actividad del BCU, se utiliza el código CIIU (Clasificació\
+        n Interfacial Industrial Uniforme) del cliente en el BCU."
+      dataType:
+        type: "String"
+    - name: "tipo_ocupacion"
+      description: "Ocupación"
+      dataType:
+        type: "String"
+    - name: "fecha_ingreso"
+      description: "Fecha ingreso al banco"
+      dataType:
+        type: "Date"
+    - name: "codigo_team"
+      description: "Código del team en donde se ubica el oficial comercial del cliente"
+      dataType:
+        type: "String"
+    - name: "descripcion_team"
+      description: "Descripción del team en donde se ubica el oficial comercial del\
+        \ cliente"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_comercial"
+      description: "Código de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_comercial"
+      description: "Nombre de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_riesgos"
+      description: "Código de gestor de riesgos"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_riesgos"
+      description: "Nombre de gestor de riesgos"
+      dataType:
+        type: "String"
+    - name: "estado_persona"
+      description: "Estado de la persona"
+      dataType:
+        type: "String"
+    - name: "condicion_persona"
+      description: "Condición de la Persona en ALTAIR"
+      dataType:
+        type: "String"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "descripcion_segmento"
+      description: "Descripción del código de Segmento"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "descripcion_subsegmento"
+      description: "Descripción del código de Subsegmento"
+      dataType:
+        type: "String"
+    - name: "codigo_universitario"
+      description: "Código universitario (UNICOD). Relación con tabla 0351"
+      dataType:
+        type: "String"
+    - name: "es_funcionario"
+      description: "Métrica calculada según el oficial del cliente"
+      dataType:
+        type: "Boolean"
+    - name: "es_cliente"
+      description: "Métrica calculada en vinculación según si el cliente tiene contratos\
+        \ activos"
+      dataType:
+        type: "Boolean"
+    - name: "es_cliente_activo"
+      description: "Métrica calculada en vinculación según si el cliente tiene volú\
+        menes"
+      dataType:
+        type: "Boolean"
+    - name: "es_cliente_loyal"
+      description: "Métrica calculada en vinculación según si el cliente cumple con\
+        \ criterios de loyal"
+      dataType:
+        type: "Boolean"
+    - name: "es_digital"
+      description: "Métrica calculada en vinculación según accesos a supernet"
+      dataType:
+        type: "Boolean"
+    - name: "es_pep"
+      description: "Marca si el cliente es PEP (S/N)"
+      dataType:
+        type: "String"
+    - name: "es_facta"
+      description: "Marca si el cliente es Facta (S/N)"
+      dataType:
+        type: "String"
+    - name: "es_fallecido"
+      description: "Marca que indica si tiene fecha de fallecimiento cargada."
+      dataType:
+        type: "Boolean"
+    - name: "es_refundido"
+      description: "Detalla si el IDF esta refundido o no. Si esta con marca 1 no\
+        \ es un cliente activo."
+      dataType:
+        type: "Boolean"
+    - name: "admite_contacto"
+      description: "Esta marca es solicitada por el cliente y significa que el banco\
+        \ debe evitar todo contacto comercial"
+      dataType:
+        type: "String"
+    - name: "tipo_ingresos"
+      description: "Tipo de ingresos percibidos Nomina (Mensual) / Facturación (Anual)"
+      dataType:
+        type: "String"
+    - name: "ingresos_facturacion"
+      description: "Monto que declara tener como ingresos (PF - Mensual) o Facturació\
+        n (PJ - Anual)"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "moneda_ingresos_facturacion"
+      description: "Moneda en la cual están expresados los ingresos (no significa\
+        \ que se cobren en dicha moneda)"
+      dataType:
+        type: "String"
+    - name: "fecha_actualizacion_ingresos"
+      description: "Fecha en la que fueron modificados los ingresos por ultima vez"
+      dataType:
+        type: "Date"
+    - name: "penumper_hash"
+      description: "Se calcula hash de Penumper para campañas digitales"
+      dataType:
+        type: "String"
+    - name: "fecha_ultima_actualizacion"
+      description: "Fecha en la cual se actualizo en el sistema por ultima vez la\
+        \ persona"
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    type: "table"
+- name: "pro_business_contratos"
+  database: "pro_business"
+  schema: "contratos"
+  tables:
+  - name: "contratos_inventario_clientes"
+    description: ""
+    identifier: "contratos_inventario_clientes"
+    config:
+      tags:
+      - "pipeline:O3090020_operacionales_crm_endeudamiento_y_contingencias"
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "codigo_agrupacion_contable"
+      description: "La agrupación contable agrupa los grandes capítulos contables,\
+        \ Activo, Pasivo, Previsiones, etc."
+      dataType:
+        type: "String"
+    - name: "detalle_agrupacion_contable"
+      description: "Agrupación de la cuenta contable por tipologia de epígrafe de\
+        \ balance"
+      dataType:
+        type: "String"
+    - name: "perimetro_gestion"
+      description: "Identifica si la cuenta contable queda comprendida dentro del\
+        \ perimetro gestionado criterio España"
+      dataType:
+        type: "Boolean"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_comercial"
+      description: "Código de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_comercial"
+      description: "Nombre de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "codigo_actividad_bcu"
+      description: "Código actividad del BCU, se utiliza el código CIIU (Clasificació\
+        n Interfacial Industrial Uniforme) del cliente en el BCU."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Número de contrato del crédito."
+      dataType:
+        type: "String"
+    - name: "fecha_valor"
+      description: "Es la fecha valor con la cual fue cargado el formulario."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento"
+      description: "Fecha de vencimiento del crédito."
+      dataType:
+        type: "Date"
+    - name: "codigo_sucursal_operacion"
+      description: "Código de la sucursal de la operación."
+      dataType:
+        type: "String"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "secuencia_contrato"
+      description: "Numero de secuencia asociado al contrato. Varía su uso en funció\
+        n del tipo de producto"
+      dataType:
+        type: "String"
+    - name: "descripcion_producto"
+      description: "Descripción del codigo_producto."
+      dataType:
+        type: "String"
+    - name: "codigo_destino"
+      description: "Código que identifica el destino de los fondos."
+      dataType:
+        type: "String"
+    - name: "moneda_contrato"
+      description: "Moneda del crédito."
+      dataType:
+        type: "String"
+    - name: "moneda_contable"
+      description: "Es la moneda en la que queda contabilizado el saldo contable del\
+        \ contrato"
+      dataType:
+        type: "String"
+    - name: "saldo_moneda_origen"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        )"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_arbitrado_pesos"
+      description: "Saldo del registro arbitrado a UYU."
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "saldo_arbitrado_dolares"
+      description: "Saldo del registro arbitrado a USD."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "dias_atraso"
+      description: "Cantidad de días de atraso del contrato"
+      dataType:
+        type: "Integer"
+    - name: "categoria_BCU"
+      description: "Categoría para el Banco Central"
+      dataType:
+        type: "String"
+    - name: "tasa_contable"
+      description: "Tasa contable del crédito."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "tipo_tasa"
+      description: "Tipo de tasa (Ej. mora, estándar)"
+      dataType:
+        type: "String"
+    - name: "tipo_calculo_interes"
+      description: "Detalla si la tasa es Lineal o Compuesta"
+      dataType:
+        type: "String"
+    - name: "plazo_contractual"
+      description: "Plazo en dias entre la fecha_valor y fecha_vencimiento"
+      dataType:
+        type: "Integer"
+    - name: "plazo_residual"
+      description: "Plazo restante en dias hasta el vencimiento de la operacion"
+      dataType:
+        type: "Integer"
+    - name: "codigo_tipo_partida"
+      description: "Indica si el contrato es de Intereses(I), Capital (K), Previsiones(P)"
+      dataType:
+        type: "String"
+    - name: "codigo_modulo_origen"
+      description: "Define el modulo que informo el registro"
+      dataType:
+        type: "String"
+    - name: "cuenta_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ la cuenta contable"
+      dataType:
+        type: "String"
+    - name: "sector_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el sector contable"
+      dataType:
+        type: "String"
+    - name: "capitulo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el capitulo contable"
+      dataType:
+        type: "String"
+    - name: "grupo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el grupo contable"
+      dataType:
+        type: "String"
+    - name: "rubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el rubro contable"
+      dataType:
+        type: "String"
+    - name: "plazo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el plazo contable"
+      dataType:
+        type: "String"
+    - name: "subrubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el subrubro contable"
+      dataType:
+        type: "String"
+    - name: "correlativo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el correlativo contable"
+      dataType:
+        type: "String"
+    - name: "descripcion_cuenta_contable"
+      description: "Descripcion de la cuenta contable"
+      dataType:
+        type: "String"
+    - name: "tasa_mora"
+      description: "Tasa mora"
+      dataType:
+        type: "Decimal(9, 6)"
+    type: "table"
+  - name: "contratos_rentabilidad_por_cliente"
+    description: ""
+    identifier: "contratos_rentabilidad_por_cliente"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "saldo_final_activo_arbitrado_dolares"
+      description: "Saldo de cierre de mes del registro de activo arbitrado a USD\
+        \ utilizando tipo_cambio_local."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "saldo_final_pasivo_arbitrado_dolares"
+      description: "Saldo de cierre de mes del registro de pasivo arbitrado a USD\
+        \ utilizando tipo_cambio_local."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "saldo_medio_activo_arbitrado_dolares"
+      description: "Saldo promedio de mes AAAAMM del registro de activo arbitrado\
+        \ a USD utilizando tipo_cambio_local."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "saldo_medio_pasivo_arbitrado_dolares"
+      description: "Saldo promedio de mes AAAAMM del registro de pasivo arbitrado\
+        \ a USD utilizando tipo_cambio_local."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "margen_activo_arbitrado_dolares"
+      description: "Resultado correspondiente al margen de credito del registro"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "margen_pasivo_arbitrado_dolares"
+      description: "Resultado correspondiente al margen de deposito del registro"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "trading_arbitrado_dolares"
+      description: "Resultado correspondiente al ROF del registro"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_arbitrado_dolares"
+      description: "Resultado correspondiente al total de las comisiones del registro"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "mob_arbitrado_dolares"
+      description: "Resultado correspondiente al margen ordinario bruto (margen activo\
+        \ + margen pasivo + trading + comisiones)"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "saldo_medio_volumen_negocio_arbitrado_dolares"
+      description: "Saldo promedio de mes del registro de activo  + pasivo arbitrado\
+        \ a USD."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_cuentas_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de cuentas"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_valores_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de valores"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_medios_de_pago_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de medios de pago"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_estructuracion_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de estructuración"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_comex_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de comercio exterior"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_seguros_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas al producto\
+        \ de seguros"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_banca_transaccional_arbitrado_dolares"
+      description: "Resultado correspondiente a las comisiones asociadas a los productos\
+        \ de banca transaccional"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "comisiones_resto_arbitrado_dolares"
+      description: "Resultado correspondiente al resto de comisiones que no quedan\
+        \ comprendidas en los conceptos anteriores"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "reajuste_ui_arbitrado_dolares"
+      description: "Resultado correspondiente al reajuste en UI generado por los productos\
+        \ en dicha moneda"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "costo_pasivo_ui_arbitrado_dolares"
+      description: "Resultado correspondiente al costo asignado para financiar los\
+        \ pasivos en UI"
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "reajuste_ui_neto_arbitrado_dolares"
+      description: "Resultado correspondiente al reajuste en UI generado por los productos\
+        \ en dicha moneda descontado el costo financiero del pasivo en UI"
+      dataType:
+        type: "Decimal(19, 4)"
+    type: "table"
+- name: "pro_business_sectores"
+  database: "pro_business"
+  schema: "sectores"
+  tables:
+  - name: "sectores_rrhh_funcionarios_inventario"
+    description: ""
+    identifier: "sectores_rrhh_funcionarios_inventario"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local del funcionario."
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de documento identidad del funcionario."
+      dataType:
+        type: "String"
+    - name: "nombre_corto_funcionario"
+      description: "Nombre abreviado del funcionario."
+      dataType:
+        type: "String"
+    - name: "nombre_completo_funcionario"
+      description: "Nombre completo incluyendo todos los nombres y apellidos del funcionario."
+      dataType:
+        type: "String"
+    - name: "codigo_oficial"
+      description: "Código de oficial asignado por Altair. Puede ser comercial, riesgos,\
+        \ otros."
+      dataType:
+        type: "String"
+    - name: "codigo_funcionario"
+      description: "Código de funcionario asignado por el sistema local de RRHH."
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      description: "Usuario Windows del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_TFC"
+      description: "Usuario asignado para acceder a TFC."
+      dataType:
+        type: "String"
+    - name: "usuario_AD"
+      description: "Usuario del Active Directory del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_grupo"
+      description: "Usuario asignado por el grupo para el funcionario (normalmente\
+        \ comienzan con N o X)"
+      dataType:
+        type: "String"
+    - name: "usuario_work_day"
+      description: "Usuario asignado por el sistema workday."
+      dataType:
+        type: "String"
+    - name: "rol_sistema"
+      description: "Rol que tiene el funcionario a nivel del sistema. Este campo tiene\
+        \ impacto en sistemas como carpeta electrónica."
+      dataType:
+        type: "String"
+    - name: "rol_detalle"
+      description: "Rol con mayor granularidad de detalle. Es utilizado también por\
+        \ sistemas como CRM para asignar perfiles."
+      dataType:
+        type: "String"
+    - name: "centro_de_costos_origen"
+      description: "Centro de costos donde esta asignada la persona."
+      dataType:
+        type: "String"
+    - name: "centro_de_costos_actual"
+      description: "Centro de costos donde esta trabajando en la fecha_dato la persona."
+      dataType:
+        type: "String"
+    - name: "centros_de_costos_adicionales"
+      description: "Centros de costos adicionales sobre los cuales el funcionario\
+        \ puede tener permisos para operar."
+      dataType:
+        type: "String"
+    - name: "unidad_de_negocio"
+      description: "Agrupación de funcionarios en base a una tarea que puede ser transversal\
+        \ a varios centros de costos."
+      dataType:
+        type: "String"
+    - name: "es_responsable_unidad_negocio"
+      description: "Indica si la persona es responsable de dicha unidad_negocios."
+      dataType:
+        type: "Boolean"
+    - name: "es_pasante"
+      description: "Indica si el funcionario tiene un rol fijo o mantiene una pasantí\
+        a."
+      dataType:
+        type: "Boolean"
+    - name: "email"
+      description: "Email del funcionario."
+      dataType:
+        type: "String"
+    - name: "celular"
+      description: "Celular del funcionario."
+      dataType:
+        type: "String"
+    - name: "telefono_interno"
+      description: "Teléfono interno del funcionario."
+      dataType:
+        type: "String"
+    - name: "codigo_unico_ad"
+      description: "Este es el código único asignado por el AD para el funcionario."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "sectores_rrhh_codiguera_roles_funcionarios"
+    description: ""
+    identifier: "sectores_rrhh_codiguera_roles_funcionarios"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "descripcion_roles_funcionarios"
+      description: "Descripción del rol del funcionario, aclarando gerencia."
+      dataType:
+        type: "String"
+    - name: "direccion"
+      description: "Descripción de la dirección de la cual depende el funcionario."
+      dataType:
+        type: "String"
+    - name: "es_gerente_sucursal"
+      description: "Marca booleana que dice si el rol es gerente de una sucursal."
+      dataType:
+        type: "Boolean"
+    - name: "es_pymes"
+      description: "Marca booleana que dice si el rol es ejecutivo pymes."
+      dataType:
+        type: "Boolean"
+    - name: "perfil_crm"
+      description: "Define el perfil del CRM según estas opciones:  1 - Oficial /\
+        \ 2 - Gerente / 3 - Zonal / 4 - Súper Usuario / 5 - Contact Center / 6 - Call\
+        \ Center / 7 - No Comercial / 8 - Riesgos / 9 - Recursos Humanos / 10 - Backoffice\
+        \ Corporate / 11 - Territorial / 12 - Director / 13 -\tComercial Servicios\
+        \ Centrales"
+      dataType:
+        type: "Integer"
+    - name: "rol_crm"
+      description: "Define el rol que tiene la persona en el CRM. Esta principalmente\
+        \ focalizado en roles comerciales."
+      dataType:
+        type: "String"
+    - name: "puede_tener_cartera"
+      description: "Define si es posible que la persona que tenga este perfil puede\
+        \ tener cartera de clientes."
+      dataType:
+        type: "Boolean"
+    type: "table"
+  - name: "sectores_comercial_clientes_volumenes"
+    description: ""
+    identifier: "sectores_comercial_clientes_volumenes"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_agrupacion_contable"
+      description: "La agrupación contable agrupa los grandes capítulos contables,\
+        \ Activo, Pasivo, Previsiones, etc."
+      dataType:
+        type: "String"
+    - name: "moneda_saldo"
+      description: "Moneda del saldo."
+      dataType:
+        type: "String"
+    - name: "saldo_arbitrado_dolares"
+      description: "Saldo del registro arbitrado a USD."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_moneda_origen"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        )"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_arbitrado_dolares_primer_titular"
+      description: "Saldo del registro arbitrado a USD, solo suman los contratos donde\
+        \ el primer titular es el cliente."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_moneda_origen_primer_titular"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        ), solo suman los contratos donde el primer titular es el cliente."
+      dataType:
+        type: "Decimal(19, 2)"
+    type: "table"
+  - name: "sectores_comercial_codiguera_productos"
+    description: ""
+    identifier: "sectores_comercial_codiguera_productos"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "moneda_producto"
+      description: "Moneda del producto."
+      dataType:
+        type: "String"
+    - name: "codigo_destino"
+      description: "Código que identifica el destino de los fondos."
+      dataType:
+        type: "String"
+    - name: "es_producto_reestructurado"
+      description: "Marca booleana que dice si el producto es el resultado de una\
+        \ refinanciación."
+      dataType:
+        type: "Boolean"
+    - name: "es_producto_green"
+      description: "Marca booleana que dice si el producto es green."
+      dataType:
+        type: "Boolean"
+    - name: "es_producto_pymes"
+      description: "Marca booleana que dice si el producto esta relacionado al segmento\
+        \ pymes."
+      dataType:
+        type: "Boolean"
+    - name: "prima_seguro"
+      description: "Tasa de la prima del seguro de vida del producto."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "familia_producto_comercial"
+      description: "Agrupación nivel 1 que identifica el producto al cual se hace\
+        \ referencia según el criterio comercial. Cuanto mayor el número de nivel\
+        \ mayor es la granularidad y detalle del producto."
+      dataType:
+        type: "String"
+    - name: "grupo_producto_comercial"
+      description: "Agrupación nivel 2 que identifica el producto al cual se hace\
+        \ referencia según el criterio comercial. Cuanto mayor el número de nivel\
+        \ mayor es la granularidad y detalle del producto."
+      dataType:
+        type: "String"
+    - name: "tipo_producto_comercial"
+      description: "Agrupación nivel 3 que identifica el producto al cual se hace\
+        \ referencia según el criterio comercial. Cuanto mayor el número de nivel\
+        \ mayor es la granularidad y detalle del producto."
+      dataType:
+        type: "String"
+    - name: "subtipo_producto_comercial"
+      description: "Agrupación nivel 4 que identifica el producto al cual se hace\
+        \ referencia según el criterio comercial. Cuanto mayor el número de nivel\
+        \ mayor es la granularidad y detalle del producto."
+      dataType:
+        type: "String"
+    - name: "descripcion_producto_crm"
+      description: "Descripción de producto a alto nivel de detalle para ser utilizado\
+        \ en CRM."
+      dataType:
+        type: "String"
+    - name: "origen_operaciones"
+      description: "Detalla que sector origina el producto."
+      dataType:
+        type: "String"
+    - name: "gestion_operaciones"
+      description: "Detalla el tipo de gestión que se debe realizar sobre las operaciones\
+        \ (manuales, sistemas, automático, etc.)"
+      dataType:
+        type: "String"
+    - name: "porcentaje_manualidad_operaciones"
+      description: "Detalla que porcentaje de manualidad tiene operaciones sobre el\
+        \ producto."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "minutos_procesamiento_operaciones"
+      description: "Detalla cuanto tiempo le lleva a operaciones procesar la venta\
+        \ del producto medido en minutos."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "manualidad_operaciones"
+      description: "Detalla que tipo de manualidad se evalúa para el producto."
+      dataType:
+        type: "String"
+    - name: "complejidad_operaciones"
+      description: "Detalla que tipo de complejidad se le asigna a la venta del producto\
+        \ con visión operación."
+      dataType:
+        type: "Decimal(19, 4)"
+    type: "table"
+  - name: "sectores_calidad_reclamos"
+    description: ""
+    identifier: "sectores_calidad_reclamos"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "numero_incidente"
+      description: "Numero de incidente generado por SGR (Sistema Gestion Reclamos)."
+      dataType:
+        type: "Integer"
+    - name: "fecha_incidente"
+      description: "Fecha en la cual se cargo el incidente."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_sla"
+      description: "Fecha en la cual vence el incidente tomando en cuenta los tiempos\
+        \ de sla establecidos."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_bcu"
+      description: "Fecha en la cual vence el incidente tomando en cuenta los tiempos\
+        \ establecidos por el BCU."
+      dataType:
+        type: "Date"
+    - name: "nombre_sector_ingreso"
+      description: "Nombre del sector que cargo el incidente."
+      dataType:
+        type: "String"
+    - name: "nombre_usuario_ingreso"
+      description: "Nombre del usuario que cargo el incidente."
+      dataType:
+        type: "String"
+    - name: "fecha_resolucion"
+      description: "Fecha en la cual fue resuelto el incidente."
+      dataType:
+        type: "Date"
+    - name: "nombre_usuario_resolucion"
+      description: "Nombre del usuario que resolvió el incidente."
+      dataType:
+        type: "String"
+    - name: "nombre_sector_resolucion"
+      description: "Nombre del sector que cargo el incidente."
+      dataType:
+        type: "String"
+    - name: "fecha_cierre"
+      description: "Fecha en la cual fue cerrada la cuenta."
+      dataType:
+        type: "Date"
+    - name: "nombre_usuario_cierre"
+      description: "Nombre del usuario que cerro el incidente."
+      dataType:
+        type: "String"
+    - name: "nombre_sector_cierre"
+      description: "Nombre del sector que cerro el incidente."
+      dataType:
+        type: "String"
+    - name: "estado_incidente"
+      description: "Estado en el que se encuentra el incidente."
+      dataType:
+        type: "String"
+    - name: "semaforo_sla"
+      description: "Indicador que muestra si los plazos se cumplieron a nivel de sla."
+      dataType:
+        type: "String"
+    - name: "semaforo_bcu"
+      description: "Indicador que muestra si los plazos se cumplieron a nivel de bcu."
+      dataType:
+        type: "String"
+    - name: "nombre_sector_asignado"
+      description: "Nombre del sector que tiene asignado el incidente."
+      dataType:
+        type: "String"
+    - name: "tipo_incidente"
+      description: "Tipo de incidente (Reclamo, Queja, consulta, etc.)"
+      dataType:
+        type: "String"
+    - name: "tag_motivo_incidente"
+      description: "Descripción del motivo que origina la carga del incidente. El\
+        \ mismo parte de una lista taxativa."
+      dataType:
+        type: "String"
+    - name: "producto_con_incidente"
+      description: "Producto que fue afectado."
+      dataType:
+        type: "String"
+    - name: "descripcion_subsegmento"
+      description: "Descripción del código de Subsegmento"
+      dataType:
+        type: "String"
+    - name: "fecha_recepcion"
+      description: "Fecha en la cual fue recibido el incidente."
+      dataType:
+        type: "Date"
+    - name: "canal_recepcion"
+      description: "Canal por el cual fue recibido el incidente."
+      dataType:
+        type: "String"
+    - name: "descripcion_incidente"
+      description: "Descripción del incidente según como fue manifestado por el cliente."
+      dataType:
+        type: "String"
+    - name: "monto_reclamado_pesos"
+      description: "Monto reclamado por el cliente en pesos."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_reclamado_dolares"
+      description: "Monto reclamado por el cliente en dólares."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_reclamado_euros"
+      description: "Monto reclamado por el cliente en euros."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_reclamado_arbitrado_dolares"
+      description: "Monto total reclamando por el cliente arbitrado a dólares."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "pan_tarjeta"
+      description: "Pan de la tarjeta afectada."
+      dataType:
+        type: "String"
+    - name: "tipo_resolucion"
+      description: "Tipo de resolución que tuvo el incidente."
+      dataType:
+        type: "String"
+    - name: "motivo_de_resolucion"
+      description: "Descripción que aclara el motivo que justifica el campo tipo_resolucion."
+      dataType:
+        type: "String"
+    - name: "motivo_devolucion"
+      description: "Motivo que origino la devolución del monto reclamado al cliente."
+      dataType:
+        type: "String"
+    - name: "contacto_cliente"
+      description: "Indica si el cliente ya fue contactado para comunicar resolució\
+        n."
+      dataType:
+        type: "String"
+    - name: "fecha_contacto"
+      description: "Fecha en la cual se ejecuto el contacto_cliente."
+      dataType:
+        type: "Date"
+    - name: "nombre_usuario_contacto"
+      description: "Nombre del usuario que contacto al cliente para informarle la\
+        \ resolución del incidente."
+      dataType:
+        type: "String"
+    - name: "plazo_especial"
+      description: "Indica si se tuvo que solicitar una excepción para resolver el\
+        \ incidente en un plazo especial."
+      dataType:
+        type: "String"
+    - name: "monto_final_pesos"
+      description: "Monto finalmente devuelto al cliente en pesos."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_final_dolares"
+      description: "Monto finalmente devuelto al cliente en dólares."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_final_euros"
+      description: "Monto finalmente devuelto al cliente en euros."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "monto_final_arbitrado_dolares"
+      description: "Monto total finalmente devuelto al cliente arbitrado en dólares."
+      dataType:
+        type: "Decimal(27, 2)"
+    - name: "dias_plazo_bcu"
+      description: "Días de plazo que se tienen disponibles para cerrar el incidente\
+        \ con criterio bcu."
+      dataType:
+        type: "Integer"
+    - name: "dias_plazo_sla"
+      description: "Días de plazo que se tienen disponibles para cerrar el incidente\
+        \ con criterio sla."
+      dataType:
+        type: "Integer"
+    - name: "dias_corridos_transcurridos"
+      description: "Días de plazo realmente incurridos hasta el momento."
+      dataType:
+        type: "Integer"
+    - name: "motivo_bcu"
+      description: "Motivo cargado para informar al BCU."
+      dataType:
+        type: "String"
+    - name: "nombre_oficial"
+      description: "Nombre del funcionario, puede ser de distintos roles (Riesgos,\
+        \ Comercial, etc.)"
+      dataType:
+        type: "String"
+    - name: "detalle_transacciones"
+      description: "Detalle que establece las transacciones reclamadas por el cliente."
+      dataType:
+        type: "String"
+    - name: "con_automatizacion"
+      description: "Indica si el reclamo es resuelto de manera automática."
+      dataType:
+        type: "String"
+    - name: "resolucion_inmediata"
+      description: "Indica si el reclamo es resuelto inmediatamente al momento de\
+        \ la carga."
+      dataType:
+        type: "String"
+    - name: "tiempo_en_sector_resolucion"
+      description: "Tiempo que estuvo el incidente en el sector de resolución."
+      dataType:
+        type: "Integer"
+    - name: "tiempo_en_sector_cierre"
+      description: "Tiempo que estuvo el incidente en el sector de cierre."
+      dataType:
+        type: "Integer"
+    - name: "tiempo_en_otros_sectores"
+      description: "Tiempo que estuvo el incidente en otros sectores."
+      dataType:
+        type: "Integer"
+    - name: "tiempo_total"
+      description: "Tiempo total que estuvo el incidente en distintos sectores."
+      dataType:
+        type: "Integer"
+    - name: "prorrogado_bcu"
+      description: "Indicador que muestra si el incidente requerido una prorroga al\
+        \ BCU."
+      dataType:
+        type: "String"
+    - name: "seguro"
+      description: "Indica el tipo de seguro que tiene el cliente que le permita hacer\
+        \ frente al reclamo."
+      dataType:
+        type: "String"
+    - name: "aseguradora"
+      description: "Indica el nombre de la aseguradora que brinda el seguro."
+      dataType:
+        type: "String"
+    - name: "detalle_sectores"
+      description: "Detalla los sectores por los cuales paso el incidente."
+      dataType:
+        type: "String"
+    - name: "cantidad_sectores"
+      description: "Indica la cantidad de sectores que intervinieron en el incidente."
+      dataType:
+        type: "Integer"
+    - name: "carga_correcta"
+      description: "Indica si el incidente fue cargado de manera correcta."
+      dataType:
+        type: "String"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    type: "table"
+- name: "pro_business_canales"
+  database: "pro_business"
+  schema: "canales"
+  tables:
+  - name: "canales_sucursales_relacion_oficial_team"
+    description: ""
+    identifier: "canales_sucursales_relacion_oficial_team"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "codigo_oficial"
+      description: "Código de oficial asignado por Altair. Puede ser comercial, riesgos,\
+        \ otros."
+      dataType:
+        type: "String"
+    - name: "codigo_funcionario"
+      description: "Código de funcionario asignado por el sistema local de RRHH."
+      dataType:
+        type: "String"
+    - name: "nombre_oficial"
+      description: "Nombre del funcionario, puede ser de distintos roles (Riesgos,\
+        \ Comercial, etc)"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_corto"
+      description: "Abreviación del campo nombre_oficial"
+      dataType:
+        type: "String"
+    - name: "usuario_TFC"
+      description: "Usuario asignado para acceder a TFC."
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      description: "Usuario Windows del funcionario."
+      dataType:
+        type: "String"
+    - name: "email"
+      description: "Email del funcionario."
+      dataType:
+        type: "String"
+    - name: "codigo_team_origen"
+      description: "Código del equipo en donde la persona esta asignada a nivel de\
+        \ costos."
+      dataType:
+        type: "String"
+    - name: "descripcion_team_origen"
+      description: "Descripción del codigo_team_origen."
+      dataType:
+        type: "String"
+    - name: "codigo_team_actual"
+      description: "Código del equipo en donde trabaja la persona en la fecha_dato."
+      dataType:
+        type: "String"
+    - name: "descripcion_team_actual"
+      description: "Descripción del codigo_team_actual."
+      dataType:
+        type: "String"
+    - name: "unidad_de_negocio"
+      description: "Agrupación de funcionarios en base a una tarea que puede ser transversal\
+        \ a varios centros de costos."
+      dataType:
+        type: "String"
+    - name: "rol_detalle"
+      description: "Rol con mayor granularidad de detalle. Es utilizado también por\
+        \ sistemas como CRM para asignar perfiles."
+      dataType:
+        type: "String"
+    - name: "es_gerente_sucursal"
+      description: "Marca booleana que dice si el rol es gerente de una sucursal."
+      dataType:
+        type: "Boolean"
+    - name: "es_pymes"
+      description: "Marca booleana que dice si el rol es ejecutivo pymes."
+      dataType:
+        type: "Boolean"
+    - name: "puede_tener_cartera"
+      description: "Define si es posible que la persona que tenga este perfil puede\
+        \ tener cartera de clientes."
+      dataType:
+        type: "Boolean"
+    - name: "linea"
+      description: "Línea de negocios en la cual esta asignado el team. (Gerente -\
+        \ Zonal - Territorial - Director línea)"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_zonal"
+      description: "Código del oficial zonal del cual depende el gerente de la sucursal."
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_zonal"
+      description: "Nombre del oficial zonal del cual depende el gerente de la sucursal."
+      dataType:
+        type: "String"
+    - name: "zona"
+      description: "Zona a la cual esta asignado el team."
+      dataType:
+        type: "String"
+    - name: "grupo_sucursales"
+      description: "Agrupación de sucursales según similitud de negocios."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_contact_relacion_oficial_team"
+    description: ""
+    identifier: "canales_contact_relacion_oficial_team"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "codigo_oficial"
+      description: "Código de oficial asignado por Altair. Puede ser comercial, riesgos,\
+        \ otros."
+      dataType:
+        type: "String"
+    - name: "nombre_corto_funcionario"
+      description: "Nombre abreviado del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_TFC"
+      description: "Usuario asignado para acceder a TFC."
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      description: "Usuario Windows del funcionario."
+      dataType:
+        type: "String"
+    - name: "email"
+      description: "Email del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_AD"
+      description: "Usuario del Active Directory del funcionario."
+      dataType:
+        type: "String"
+    - name: "rol_detalle"
+      description: "Rol con mayor granularidad de detalle. Es utilizado también por\
+        \ sistemas como CRM para asignar perfiles."
+      dataType:
+        type: "String"
+    - name: "codigo_team_origen"
+      description: "Código del equipo en donde la persona esta asignada a nivel de\
+        \ costos."
+      dataType:
+        type: "String"
+    - name: "descripcion_team_origen"
+      description: "Descripción del codigo_team_origen."
+      dataType:
+        type: "String"
+    - name: "codigo_team_actual"
+      description: "Código del equipo en donde trabaja la persona en la fecha_dato."
+      dataType:
+        type: "String"
+    - name: "descripcion_team_actual"
+      description: "Descripción del codigo_team_actual."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_sucursales_teams"
+    description: ""
+    identifier: "canales_sucursales_teams"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_dato"
+      dataType:
+        type: "Date"
+    - name: "codigo_team"
+      dataType:
+        type: "String"
+    - name: "descripcion_team"
+      dataType:
+        type: "String"
+    - name: "grupo_sucursales"
+      dataType:
+        type: "String"
+    - name: "prioridad_sucursal"
+      dataType:
+        type: "Integer"
+    - name: "zona"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_zonal"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_zonal"
+      dataType:
+        type: "String"
+    - name: "territorio"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_territorial"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_territorial"
+      dataType:
+        type: "String"
+    - name: "linea"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_digital_usuarios"
+    description: ""
+    identifier: "canales_digital_usuarios"
+    config:
+      tags:
+      - "pipeline:R0010025_CRM_Matriz_de_servicios"
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "codigo_sitio_supernet4"
+      description: "Código único que identifica el sitio en supernet4."
+      dataType:
+        type: "Integer"
+    - name: "codigo_sitio_supernet5"
+      description: "Código único que identifica el sitio en supernet5."
+      dataType:
+        type: "Integer"
+    - name: "nombre_sitio"
+      description: "Nombre del sitio, se compone por la concatenación de los nombres\
+        \ de los participantes."
+      dataType:
+        type: "String"
+    - name: "fecha_hora_creacion_sitio"
+      description: "Fecha y hora en la cual se creo el sitio."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_aprobacion_sitio"
+      description: "Fecha y hora en la cual el sitio fue aprobado en el sistema."
+      dataType:
+        type: "Timestamp"
+    - name: "descripcion_tipo_sitio"
+      description: "Descripción del tipio de sitio, identifica el look&feel que ve\
+        \ el cliente."
+      dataType:
+        type: "String"
+    - name: "descripcion_modalidad_sitio"
+      description: "Describe el tipo de operativa que puede realizar el cliente en\
+        \ su sitio."
+      dataType:
+        type: "String"
+    - name: "tiene_llave_digital"
+      description: "Identificador de si el sitio tiene activada la llave digital."
+      dataType:
+        type: "Boolean"
+    - name: "llave_digital_bloqueada"
+      description: "Identificador de si la llave digital esta bloqueada o activa."
+      dataType:
+        type: "Boolean"
+    - name: "llave_digital_deshabilitada"
+      description: "Identificador de si la llave digital esta deshabilitada o activa."
+      dataType:
+        type: "Boolean"
+    - name: "fecha_hora_alta_llave_digital"
+      description: "Identifica la fecha y la hora en la cual la llave digital fue\
+        \ dada de alta."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_ultimo_uso_llave_digital"
+      description: "Identifica la ultima vez que el cliente transacciono con dicha\
+        \ llave digital."
+      dataType:
+        type: "Timestamp"
+    - name: "tiene_p2p"
+      description: "Identifica si el cliente tiene activo p2p, o pago entre usuarios,\
+        \ también llamado YatePago."
+      dataType:
+        type: "Boolean"
+    - name: "estado_p2p"
+      description: "Identifica el estado de dicha funcionalidad, solo Activas deben\
+        \ ser contempladas como funcionales."
+      dataType:
+        type: "String"
+    - name: "fecha_hora_cambio_estado_p2p"
+      description: "Identifica la fecha y hora en la cual la llave digital tomo el\
+        \ estado marcado en el campo \"estado_p2p\"."
+      dataType:
+        type: "Timestamp"
+    - name: "status_sitio"
+      description: "Identifica en que status se encuentra el sitio en cuestión."
+      dataType:
+        type: "String"
+    - name: "es_migrado"
+      description: "Identifica si el sitio fue migrado de supernet 4 a supernet 5."
+      dataType:
+        type: "Boolean"
+    - name: "fecha_hora_migracion"
+      description: "Fecha en la cual el sitio fue migrado de supernet 4 a supernet\
+        \ 5."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_ultimo_login_sitio"
+      description: "Fecha y hora cuando algún usuario del sitio se logeo por ultima\
+        \ vez."
+      dataType:
+        type: "Timestamp"
+    - name: "codigo_usuario"
+      description: "Código que identifica al usuario dentro de supernet. Un mismo\
+        \ código de usuario puede estar en varios sitios."
+      dataType:
+        type: "String"
+    - name: "codigo_usuario_sitio"
+      description: "Código único que identifica el usuario dentro de un sitio."
+      dataType:
+        type: "Integer"
+    - name: "estado_usuario_sitio"
+      description: "Identifica en que estado se encuentra un usuario dentro de un\
+        \ sitio. Un bloqueo del usuario_sitio solo lo bloquea a operar en dicho sitio,\
+        \ no en todos los que participe."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "es_titular"
+      description: "Identifica si el cliente es titular del sitio, los que no son\
+        \ titulares pueden ser adicionales o personas dentro de una empresa."
+      dataType:
+        type: "Boolean"
+    - name: "nombre_usuario"
+      description: "Nombre del usuario."
+      dataType:
+        type: "String"
+    - name: "apellido_usuario"
+      description: "Apellido del usuario."
+      dataType:
+        type: "String"
+    - name: "status_codigo_usuario"
+      description: "Identifica el status del código de usuario, un bloqueo a nivel\
+        \ de código usuario lo inhabilita en todos los sitios donde participa."
+      dataType:
+        type: "String"
+    - name: "descripcion_tipo_usuario"
+      description: "Describe que tipo de rol tiene el usuario en el sitio."
+      dataType:
+        type: "String"
+    - name: "descripcion_modalidad_usuario"
+      description: "Describe que funcionalidades puede realizar el usuario en el sitio."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_del_asociador"
+      description: "Identificador único de la persona que asocio dicha persona al\
+        \ sitio."
+      dataType:
+        type: "String"
+    - name: "fecha_hora_creacion_usuario"
+      description: "Fecha y hora en la que fue creado el usuario."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_modificacion_usuario"
+      description: "Fecha y hora en la que fue modificado el usuario por ultima vez."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_ultimo_login_usuario"
+      description: "Fecha y hora en la que se logeo el usuario."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_ultimo_cambio_password"
+      description: "Fecha y hora en la cual el usuario cambio su password por ultima\
+        \ vez."
+      dataType:
+        type: "Timestamp"
+    - name: "plataforma"
+      description: "Plataforma utilizada por el cliente (Supernet4, Supernet5, Banca\
+        \ Individuos, etc.)."
+      dataType:
+        type: "String"
+    - name: "accesos_app"
+      description: "Cantidad de accesos a la APP en el AAAAMM identificado."
+      dataType:
+        type: "Integer"
+    - name: "accesos_app_tc"
+      description: "Cantidad de accesos a la APP de TC en el AAAAMM identificado.(En\
+        \ el 2024 se decomiso la solución)"
+      dataType:
+        type: "Integer"
+    - name: "accesos_banred"
+      description: "Cantidad de accesos a la APP/Web de Banred en el AAAAMM identificado."
+      dataType:
+        type: "Integer"
+    - name: "accesos_web"
+      description: "Cantidad de accesos a la Web en el AAAAMM identificado."
+      dataType:
+        type: "Integer"
+    - name: "accesos_otros"
+      description: "Cantidad de accesos a otras soluciones tecnológicas."
+      dataType:
+        type: "Integer"
+    - name: "accesos_totales"
+      description: "Sumatoria de todos los accesos por cualquiera de las plataformas."
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "canales_biometria_clientes"
+    description: ""
+    identifier: "canales_biometria_clientes"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "id_alta_biometria"
+      description: "Id que identifica el alta en el sistema de Biometría."
+      dataType:
+        type: "Bigint"
+    - name: "fecha_hora_alta"
+      description: "Identifica la fecha y la hora en la cual la biometría fue dada\
+        \ de alta."
+      dataType:
+        type: "Timestamp"
+    - name: "descripcion_ultimo_estado"
+      description: "Describe el ultimo estado en el cual se encuentra el caso."
+      dataType:
+        type: "String"
+    - name: "fecha_hora_ultimo_estado"
+      description: "Fecha y hora en la cual el caso quedo en el estado mencionado\
+        \ en el descripcion_ultimo_estado."
+      dataType:
+        type: "Timestamp"
+    - name: "accion_usuario"
+      description: "Define el usuario que realizo la acción."
+      dataType:
+        type: "String"
+    - name: "ratio_similitud_biometria"
+      description: "Muestra el ratio de similitud identificado entre el cliente y\
+        \ los registros biométricos."
+      dataType:
+        type: "Double"
+    - name: "estado_selfie"
+      description: "Define el estado en el cual se encuentra la Selfie."
+      dataType:
+        type: "String"
+    - name: "estado_biometria"
+      description: "Define el estado en el cual se encuentra la Biometría."
+      dataType:
+        type: "String"
+    - name: "descripcion_error"
+      description: "En caso de estar en estado de error describe el tipo de error."
+      dataType:
+        type: "String"
+    - name: "es_borrado"
+      description: "Define si el caso fue borrado."
+      dataType:
+        type: "Boolean"
+    - name: "origen_biometria"
+      description: "Define la aplicación por la cual se originó la biometría para\
+        \ el cliente."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_sucursales_administrador_de_filas_atenciones"
+    description: ""
+    identifier: "canales_sucursales_administrador_de_filas_atenciones"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "pais_documento"
+      description: "País documento identidad"
+      dataType:
+        type: "String"
+    - name: "tipo_documento"
+      description: "Tipo de Documento de identidad"
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de Documento identidad"
+      dataType:
+        type: "String"
+    - name: "identificador_visita"
+      description: "Identificador que marca el codigo unico de la visita del cliente.\
+        \ Un identificador_visita puede tener varios identificador_atencion."
+      dataType:
+        type: "Integer"
+    - name: "genera_numero"
+      description: "Identifica si el administrador de filas le dio un ticket al cliente\
+        \ o no le dio por no aplicar para atención presencial."
+      dataType:
+        type: "Boolean"
+    - name: "identificador_atencion"
+      description: "Identificador que marca el codigo unico de la atencion realizada\
+        \ al cliente. Un identificador_visita puede tener varios identificador_atencion."
+      dataType:
+        type: "Integer"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "estado_tramite"
+      description: "Estado del tramite"
+      dataType:
+        type: "String"
+    - name: "fecha_hora_inicio_atencion"
+      description: "Fecha y hora en la cual se comenzó a atender al cliente"
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_fin_atencion"
+      description: "Fecha y hora en la cual se finalizo la atención del cliente"
+      dataType:
+        type: "Timestamp"
+    - name: "tiempo_espera"
+      description: "Tiempo que tuvo que esperar la persona para ser atendido en minutos."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "tiempo_atencion"
+      description: "Tiempo que se le dedico al cliente para su atención"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "sector_seleccionado"
+      description: "Sector que selecciono el cliente al momento de anunciarse"
+      dataType:
+        type: "String"
+    - name: "sector_llamado"
+      description: "Sector que efectivamente lo llamo"
+      dataType:
+        type: "String"
+    - name: "super_grupo_tarea"
+      description: "El supergrupo es una agrupación superior de la fila del cliente."
+      dataType:
+        type: "String"
+    - name: "grupo_tarea"
+      description: "Primer nivel de selección"
+      dataType:
+        type: "String"
+    - name: "tarea"
+      description: "Tercer nivel de selección"
+      dataType:
+        type: "String"
+    - name: "fila"
+      description: "Fila por la cual fue atendido el cliente"
+      dataType:
+        type: "String"
+    - name: "codigo_servicio_prestado"
+      description: "Código que identifica la tarea que afirma el funcionario que hizo"
+      dataType:
+        type: "Integer"
+    - name: "descripcion_servicio_prestado"
+      description: "Descripción del campo codigo_servicio_prestado."
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      description: "Usuario Windows del funcionario que atendió al cliente."
+      dataType:
+        type: "String"
+    - name: "codigo_team"
+      description: "Código del team que atendió al cliente."
+      dataType:
+        type: "String"
+    - name: "descripcion_team"
+      description: "Descripción de la sucursal de atención"
+      dataType:
+        type: "String"
+    - name: "grupo_sucursal"
+      description: "Grupo de sucursal según criterio de Calidad"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_sucursales_administrador_de_filas_visitas"
+    description: ""
+    identifier: "canales_sucursales_administrador_de_filas_visitas"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "pais_documento"
+      description: "País documento identidad"
+      dataType:
+        type: "String"
+    - name: "tipo_documento"
+      description: "Tipo de Documento de identidad"
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de Documento identidad"
+      dataType:
+        type: "String"
+    - name: "identificador_visita"
+      description: "Identificador que marca el codigo unico de la visita del cliente.\
+        \ Un identificador_visita puede tener varios identificador_atencion."
+      dataType:
+        type: "Integer"
+    - name: "genera_numero"
+      description: "Identifica si el administrador de filas le dio un ticket al cliente\
+        \ o no le dio por no aplicar para atención presencial."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "estado_tramite"
+      description: "Estado del tramite"
+      dataType:
+        type: "String"
+    - name: "fecha_hora_extraccion_ticket"
+      description: "Fecha y hora en la cual el ticket fue extraído del sistema"
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_inicio_atencion"
+      description: "Fecha y hora en la cual se comenzó a atender al cliente"
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_hora_fin_atencion"
+      description: "Fecha y hora en la cual se finalizo la atención del cliente"
+      dataType:
+        type: "Timestamp"
+    - name: "tiempo_espera"
+      description: "Tiempo que tuvo que esperar la persona para ser atendido en minutos."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "tiempo_atencion"
+      description: "Tiempo que se le dedico al cliente para su atención"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "tiempo_total_en_sucursal"
+      description: "Tiempo total que estuvo el cliente en la sucursal"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "cantidad_atenciones"
+      description: "Cantidad de veces que fue atendida por distintas presonas de la\
+        \ sucurusal."
+      dataType:
+        type: "Integer"
+    - name: "codigo_team"
+      description: "Código del team que atendió al cliente."
+      dataType:
+        type: "String"
+    - name: "descripcion_team"
+      description: "Descripción de la sucursal de atención"
+      dataType:
+        type: "String"
+    - name: "grupo_sucursal"
+      description: "Grupo de sucursal según criterio de Calidad"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "canales_cabinas_atenciones"
+    description: ""
+    identifier: "canales_cabinas_atenciones"
+    config:
+      tags:
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "id_turno"
+      description: "Es el código único que identifica la interacción. Puede tener\
+        \ varios registros"
+      dataType:
+        type: "Integer"
+    - name: "ordinal_turno"
+      description: "El numero identifica el paso del id_turno."
+      dataType:
+        type: "Integer"
+    - name: "turno"
+      description: "Turno de atención en cabina."
+      dataType:
+        type: "String"
+    - name: "fecha_hora_dato"
+      description: "Fecha y hora en la cual se captura el dato."
+      dataType:
+        type: "Timestamp"
+    - name: "accion_turno"
+      description: "Acción realizada en el ordinal del turno."
+      dataType:
+        type: "String"
+    - name: "tramite"
+      description: "Tramite del turno."
+      dataType:
+        type: "String"
+    - name: "subtramite"
+      description: "Subtramite del ordinal del turno."
+      dataType:
+        type: "String"
+    - name: "email_usuario"
+      description: "Email ingresado por el cliente."
+      dataType:
+        type: "String"
+    - name: "puesto_atencion"
+      description: "Box que realizó la atención."
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de documento identidad"
+      dataType:
+        type: "String"
+    - name: "telefono"
+      description: "Numero de teléfono ingresado por el cliente."
+      dataType:
+        type: "String"
+    - name: "id_sala_espera"
+      description: "Id de la sala de espera."
+      dataType:
+        type: "Bigint"
+    - name: "nombre_sala_espera"
+      description: "Nombre de la sala de espera utilizada."
+      dataType:
+        type: "String"
+    - name: "tiempo_espera"
+      description: "Tiempo que tuvo que esperar la persona para ser atendido en minutos."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "tiempo_atencion"
+      description: "Tiempo en minutos que se le dedico al cliente para su atención"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "nombre_terminal"
+      description: "Nombre del Kiosco utilizado para la atención."
+      dataType:
+        type: "String"
+    - name: "tiene_prioridad"
+      description: "Indica si el cliente tuvo prioridad en la atención."
+      dataType:
+        type: "Boolean"
+    - name: "computa_nivel_sevicio"
+      description: "Indica si la atención computa para la métrica de nivel de servicio."
+      dataType:
+        type: "Boolean"
+    - name: "id_sesion_videollamada_chat"
+      description: "Id para identificar la sesión."
+      dataType:
+        type: "String"
+    - name: "id_grabacion_videollamada_chat"
+      description: "Id para identificar la grabación."
+      dataType:
+        type: "String"
+    - name: "link_descarga_videollamada_chat"
+      description: "Id para identificar los documentos cargados."
+      dataType:
+        type: "String"
+    type: "table"
+- name: "pro_business_grupo"
+  database: "pro_business"
+  schema: "grupo"
+  tables:
+  - name: "grupo_f1rst_funcionarios_inventario"
+    description: ""
+    identifier: "grupo_f1rst_funcionarios_inventario"
+    config:
+      tags:
+      - "pipeline:O3090022_operacionales_crm_oficial_team"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "empresa_empleadora"
+      description: "Empresa que esta empleando al funcionario."
+      dataType:
+        type: "String"
+    - name: "numero_documento"
+      description: "Numero de documento identidad del funcionario."
+      dataType:
+        type: "String"
+    - name: "nombre_corto_funcionario"
+      description: "Nombre abreviado del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_banco"
+      description: "Usuario Windows del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_work_day"
+      description: "Usuario asignado por el sistema workday."
+      dataType:
+        type: "String"
+    - name: "usuario_grupo"
+      description: "Usuario asignado por el grupo para el funcionario (normalmente\
+        \ comienzan con N o X)"
+      dataType:
+        type: "String"
+    - name: "usuario_TFC"
+      description: "Usuario asignado para acceder a TFC."
+      dataType:
+        type: "String"
+    - name: "email"
+      description: "Email del funcionario."
+      dataType:
+        type: "String"
+    - name: "usuario_AD"
+      description: "Usuario del Active Directory del funcionario."
+      dataType:
+        type: "String"
+    - name: "rol_detalle"
+      description: "Rol con mayor granularidad de detalle. Es utilizado también por\
+        \ sistemas como CRM para asignar perfiles."
+      dataType:
+        type: "String"
+    - name: "rol_sistema"
+      description: "Rol que tiene el funcionario a nivel del sistema. Este campo tiene\
+        \ impacto en sistemas como carpeta electrónica."
+      dataType:
+        type: "String"
+    - name: "celular"
+      description: "Celular del funcionario."
+      dataType:
+        type: "String"
+    - name: "codigo_unico_ad"
+      description: "Este es el código único asignado por el AD para el funcionario."
+      dataType:
+        type: "String"
+    type: "table"
+- name: "pro_business_productos"
+  database: "pro_business"
+  schema: "productos"
+  tables:
+  - name: "productos_cuentas_tarifario_transferencias"
+    description: ""
+    identifier: "productos_cuentas_tarifario_transferencias"
+    config:
+      tags:
+      - "pipeline:O3090023_operacionales_crm_tarifario_transferencias"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_operacion"
+      description: "Código que identifica el tipo de operación que tiene una tarifa\
+        \ especial."
+      dataType:
+        type: "String"
+    - name: "descripcion_operacion"
+      description: "Describe el tipo de operativa que tiene una tarifa especial."
+      dataType:
+        type: "String"
+    - name: "costo_swift"
+      description: "Costo que se cobra por los swifts."
+      dataType:
+        type: "Double"
+    - name: "costo_fijo_transferencia"
+      description: "Costo que se cobra por las transferencias."
+      dataType:
+        type: "Double"
+    - name: "costo_minimo_transferencia"
+      description: "Costo mínimo que se cobra por las transferencias."
+      dataType:
+        type: "Decimal(17, 2)"
+    - name: "costo_maximo_transferencia"
+      description: "Costo máximo que se cobra por las transferencias."
+      dataType:
+        type: "Decimal(17, 2)"
+    - name: "porcentaje_costo_transferencia"
+      description: "Porcentaje costo que se cobra por las transferencias."
+      dataType:
+        type: "Decimal(8, 4)"
+    - name: "tipo_comision"
+      description: "Aclara si la comisión a cobrar es exenta o especial."
+      dataType:
+        type: "String"
+    - name: "fecha_ultima_modificacion"
+      description: "Fecha en la cual se modifico la comisión por ultima vez."
+      dataType:
+        type: "Date"
+    type: "table"
+  - name: "productos_nominas_transacciones"
+    description: ""
+    identifier: "productos_nominas_transacciones"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_transaccion"
+      description: "Fecha en la cual se realizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "numero_transaccion"
+      description: "Clave unica creada con 'CTA' + ENTIDAD + CENTRO_ALTA + CUENTA\
+        \ + DIVISA + NUMER_MOV"
+      dataType:
+        type: "String"
+    - name: "id_orden"
+      description: "Id de la orden asignado por BOCM."
+      dataType:
+        type: "Integer"
+    - name: "id_pago"
+      description: "Id del pago asignado por BOCM."
+      dataType:
+        type: "Integer"
+    - name: "fuente"
+      description: "Muestra el sistema origen del cual se capturo el pago de sueldo."
+      dataType:
+        type: "String"
+    - name: "sistema_pago"
+      description: "Indica el sistema de pago utilizado para realizar la transaccion."
+      dataType:
+        type: "String"
+    - name: "grupo_tipo_transaccion_cuenta"
+      description: "Indica el tipo de transaccion realizada. El mismo es calculado\
+        \ en base al codigo de codigo_tipo_transaccion_cuenta."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta_pagador"
+      description: "Código de la sucursal de la cuenta del cliente que realiza el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta_pagador"
+      description: "Moneda de la cuenta del cliente que realiza el pago."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_pagador"
+      description: "Numero de cuenta del cliente que realiza el pago."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_pagador"
+      description: "Identificador único a nivel local de la persona que realiza el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta_cobrador"
+      description: "Código de la sucursal de la cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta_cobrador"
+      description: "Moneda de la cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_cobrador"
+      description: "Numero de cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_cobrador"
+      description: "Identificador único a nivel local de la persona que recibe el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "banco_cobrador"
+      description: "Banco al cual es enviado el pago."
+      dataType:
+        type: "Integer"
+    - name: "monto_transaccion_moneda_origen"
+      description: "Monto de la transacción expresado en la moneda de origen."
+      dataType:
+        type: "Decimal(23, 2)"
+    - name: "monto_transaccion_arbitrado_dolares"
+      description: "Monto de la transacción arbitrado a dólares."
+      dataType:
+        type: "Decimal(24, 2)"
+    type: "table"
+  - name: "productos_mdp_cuentas_transaccionalidad"
+    description: ""
+    identifier: "productos_mdp_cuentas_transaccionalidad"
+    config:
+      tags:
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad"
+      - "pipeline:O3090024_operacionales_crm_volumenes_y_rentabilidad_total"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "numero_transaccion"
+      description: "Id único que identifica el registro de la transacción en altair."
+      dataType:
+        type: "String"
+    - name: "modulo_transaccion"
+      description: "Identifica el modulo de la transacción que fue realizada"
+      dataType:
+        type: "String"
+    - name: "fecha_transaccion"
+      description: "Fecha en la cual se realizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "tipo_transaccion"
+      description: "Identifica el tipo de transacción que fue realizada."
+      dataType:
+        type: "String"
+    - name: "tipo_transaccion_detalle"
+      description: "Permite identificar con un segundo rango de detalle el tipo de\
+        \ transacción realizada."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta"
+      description: "Código de la sucursal de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta"
+      description: "Moneda de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "pan_tarjeta"
+      description: "Numero de PAN de la tarjeta crédito o débito"
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Numero de contrato asignado por Altair para el instrumento."
+      dataType:
+        type: "String"
+    - name: "id_billetera"
+      description: "Identifica el ID de la billetera electrónica utilizada en la transacció\
+        n (Google, ApplePay)"
+      dataType:
+        type: "String"
+    - name: "moneda_transaccion"
+      description: "Moneda la cual fue realizada la transacción."
+      dataType:
+        type: "String"
+    - name: "monto_transaccion_moneda_origen"
+      description: "Monto de la transacción expresado en la moneda de origen."
+      dataType:
+        type: "Decimal(23, 2)"
+    - name: "monto_transaccion_arbitrado_pesos"
+      description: "Monto de la transacción arbitrado a pesos."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "monto_transaccion_arbitrado_dolares"
+      description: "Monto de la transacción arbitrado a dólares."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "id_adquirente"
+      description: "Identificador que permite distinguir el adquirente utilizado en\
+        \ la transacción."
+      dataType:
+        type: "Integer"
+    - name: "codigo_mcc"
+      description: "Código que identifica el rubro en el cual trabaja el comercio\
+        \ donde se hizo la transacción."
+      dataType:
+        type: "Integer"
+    - name: "codigo_comercio"
+      description: "Código que identifica el comercio donde se realizo la transacció\
+        n."
+      dataType:
+        type: "String"
+    - name: "descripcion_comercio"
+      description: "Descripción del comercio donde se realizo la transacción."
+      dataType:
+        type: "String"
+    - name: "cantidad_cuotas"
+      description: "Cantidad de cuotas en la cual se realizó la compra."
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "productos_mdp_inventario"
+    description: ""
+    identifier: "productos_mdp_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_contrato"
+      description: "Identificador único a nivel local de la persona que es titular\
+        \ del contrato."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_tarjeta"
+      description: "Identificador único a nivel local de la persona que es titular\
+        \ de la tarjeta."
+      dataType:
+        type: "String"
+    - name: "es_titular"
+      description: "Identifica si el titular de la tarjeta es el titular del contrato\
+        \ o es un adicional."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Numero de contrato asignado por Altair para el instrumento."
+      dataType:
+        type: "String"
+    - name: "condicion_economica"
+      description: "Establece la condición económica de cobro de la tarjeta. Segú\
+        n esta se define cuanto se cobra al año y por otros conceptos."
+      dataType:
+        type: "String"
+    - name: "bloqueo_soft_contrato"
+      description: "Indica si el contrato tiene un bloqueo que puede ser revertido."
+      dataType:
+        type: "Boolean"
+    - name: "bloqueo_duro_contrato"
+      description: "Indica si el contrato tiene un bloqueo que no puede ser revertido."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_bloqueo_contrato"
+      description: "Código que indica el motivo por cual fue bloqueado el contrato."
+      dataType:
+        type: "Integer"
+    - name: "codigo_motivo_baja_contrato"
+      description: "Código que identifica por que se dio de baja el contrato."
+      dataType:
+        type: "String"
+    - name: "fecha_alta_contrato"
+      description: "Fecha en la cual fue dado de alta el contrato."
+      dataType:
+        type: "Date"
+    - name: "fecha_baja_contrato"
+      description: "Fecha en la cual fue dado de baja el contrato."
+      dataType:
+        type: "Date"
+    - name: "tipo_tarjeta"
+      description: "Tipo de tarjeta a la cual refiere el registro (TC o TD)"
+      dataType:
+        type: "String"
+    - name: "pan_tarjeta"
+      description: "Numero de PAN de la tarjeta crédito o débito"
+      dataType:
+        type: "String"
+    - name: "numero_beneficiario_contrato"
+      description: "Identifica que ordinal ocupa el cliente en el contrato de referencia."
+      dataType:
+        type: "Decimal(7, 0)"
+    - name: "codigo_bloqueo_tarjeta"
+      description: "Código que indica el motivo por cual fue bloqueado la tarjeta."
+      dataType:
+        type: "Integer"
+    - name: "motivo_bloqueo_tarjeta"
+      description: "Código que identifica el motivo el cual se bloqueo la tarjeta."
+      dataType:
+        type: "String"
+    - name: "bloqueo_soft_tarjeta"
+      description: "Indica si la tarjeta tiene un bloqueo que puede ser revertido."
+      dataType:
+        type: "Boolean"
+    - name: "bloqueo_duro_tarjeta"
+      description: "Indica si la tarjeta tiene un bloqueo que no puede ser revertido."
+      dataType:
+        type: "Boolean"
+    - name: "indicador_situacion_tarjeta"
+      description: "Indicador situación (01 SELECCIONADA ESTAMPACIÓN ALTA, 02 ENVIADA\
+        \ ESTAMPACIÓN ALTA , 03 SELECCIONADA ESTAMPACIÓN RENOVACIÓN04 ENVIADA ESTAMPACIÓ\
+        N RENOVACIÓN, 05 EN PODER DEL CLIENTE, 06 PENDIENTE CAMBIO PIN EN CAJEROS,\
+        \ 07 PENDIENTE CAMBIO DE PIN OTROS,08 RECOGIDA POR BAJA, 09 PENDIENTE POR\
+        \ RECOGER BAJA, 10 NO EMITIDA, 11 PENDIENTE POR RECOGER OTRA, 12 SELECCIONADA\
+        \ PARA ESTAMPACIÓN POR ALTA MASIVA, 13 ENVIADA PARA ESTAMPACIÓN POR ALTA MASIVA\
+        \ , 14 REEMITIDA CON CAMBIO DE PAN, 15 ERROR EN ESTAMPACION)"
+      dataType:
+        type: "Decimal(4, 0)"
+    - name: "indicador_ultima_tarjeta"
+      description: "Indica si la tarjeta es la ultima emitida para esa persona en\
+        \ ese contrato."
+      dataType:
+        type: "String"
+    - name: "fecha_alta_tarjeta"
+      description: "Fecha en la cual fue dada de alta la tarjeta."
+      dataType:
+        type: "Date"
+    - name: "fecha_baja_tarjeta"
+      description: "Fecha en la cual fue dada de baja la tarjeta."
+      dataType:
+        type: "Date"
+    - name: "limite_tarjeta"
+      description: "Limite de compra total que tiene la tarjeta."
+      dataType:
+        type: "Decimal(20, 2)"
+    - name: "tiene_saldo_aplazado"
+      description: "Indicador que muestra si el contrato aplaza pagos o es totalero."
+      dataType:
+        type: "Boolean"
+    - name: "cartera_pesos"
+      description: "Deuda del contrato en pesos."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "cartera_dolares"
+      description: "Deuda del contrato en dólares."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "cartera_arbitrado_dolares"
+      description: "Deuda total del contrato arbitrada a dólares."
+      dataType:
+        type: "Decimal(20, 2)"
+    - name: "monto_compras_pesos"
+      description: "Monto de compras realizadas en Pesos en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_dolares"
+      description: "Monto de compras realizadas en Dólares en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_locales_arbitrado_dolares"
+      description: "Monto de compras totales realizadas en el país arbitradas en Dó\
+        lares en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_exterior_arbitrado_dolares"
+      description: "Monto de compras totales realizadas en el exterior arbitradas\
+        \ en Dólares en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_local_pesos"
+      description: "Monto de compras realizadas en el país en pesos en el periodo\
+        \ AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_local_dolares"
+      description: "Monto de compras realizadas en el país en dólares en el periodo\
+        \ AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_totales_dolares"
+      description: "Monto de compras totales en dólares en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_compras_totales_pesos"
+      description: "Monto de compras totales en pesos en el periodo AAAAMM."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "cantidad_compras_pesos"
+      description: "Cantidad de compras realizadas en pesos."
+      dataType:
+        type: "Bigint"
+    - name: "cantidad_compras_dolares"
+      description: "Cantidad de compras realizadas en dólares."
+      dataType:
+        type: "Bigint"
+    - name: "cantidad_compras_locales"
+      description: "Cantidad de compras realizadas en el país."
+      dataType:
+        type: "Bigint"
+    - name: "cantidad_compras_exterior"
+      description: "Cantidad de compras realizadas en el exterior."
+      dataType:
+        type: "Bigint"
+    - name: "cantidad_compras_totales"
+      description: "Cantidad de compras totales."
+      dataType:
+        type: "Bigint"
+    - name: "tarjeta_transaccional_mes"
+      description: "Marca que indica si la tarjeta transacciono en el AAAAMM."
+      dataType:
+        type: "Boolean"
+    - name: "AAAAMM_cuota_cobro"
+      description: "AAAAMM en la cual se cobra la primera cuota del costo de la tarjeta."
+      dataType:
+        type: "Integer"
+    - name: "AAAAMM_caducidad_tarjeta"
+      description: "AAAAMM en la cual se vence la tarjeta."
+      dataType:
+        type: "Integer"
+    - name: "grupo_liquidacion"
+      description: "Indica en que grupo de liquidación de EDC se encuentra la tarjeta."
+      dataType:
+        type: "Integer"
+    - name: "fecha_cierre_tarjeta"
+      description: "Fecha en la cual cerro la tarjeta ese AAAAMM."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_edc"
+      description: "Fecha en la cual vence el pago de la tarjeta ese AAAAMM."
+      dataType:
+        type: "Date"
+    type: "table"
+  - name: "productos_seguros_inventario"
+    description: ""
+    identifier: "productos_seguros_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "fecha_alta"
+      description: "Fecha de alta del seguro."
+      dataType:
+        type: "Date"
+    - name: "fecha_valor"
+      description: "Es la fecha valor con la cual fue cargado el seguro."
+      dataType:
+        type: "Date"
+    - name: "usuario_tfc_vendedor"
+      description: "Usuario asignado para acceder a TFC que tiene el vendedor."
+      dataType:
+        type: "String"
+    - name: "grupo_producto_seguro"
+      description: "Agrupación a mas alto nivel que muestra el tipo de riesgo (ramo)\
+        \ que cubre el seguro."
+      dataType:
+        type: "String"
+    - name: "tipo_producto_seguro"
+      description: "Agrupación a nivel medio que detalla el tipo de seguro."
+      dataType:
+        type: "String"
+    - name: "subtipo_producto_seguro"
+      description: "Agrupación a bajo nivel que detalla dentro del tipo de seguro\
+        \ cuales son las particularidades que tiene."
+      dataType:
+        type: "String"
+    - name: "codigo_ramo_seguro"
+      description: "Código de rector que identifica el ramo del seguro."
+      dataType:
+        type: "SmallInt"
+    - name: "codigo_producto_seguro"
+      description: "Código de rector que identifica el sub_tipo_producto_seguro."
+      dataType:
+        type: "String"
+    - name: "numero_poliza_seguro"
+      description: "Numero único de la póliza en el sistema de la compañía proveedora\
+        \ de seguros."
+      dataType:
+        type: "String"
+    - name: "numero_certificado"
+      description: "El certificado es la identificación dentro de la póliza para separar\
+        \ el seguro por clientes."
+      dataType:
+        type: "String"
+    - name: "codigo_plan"
+      description: "El código del plan identifica entre los distintos costos/coberturas\
+        \ de un seguro."
+      dataType:
+        type: "String"
+    - name: "cantidad_empleados_asegurados"
+      description: "Cantidad de empleados cubiertos por este seguro de vida colectivo."
+      dataType:
+        type: "Integer"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_debitos_automaticos_inventario"
+    description: ""
+    identifier: "productos_debitos_automaticos_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "grupo_producto_debito_automatico"
+      description: "Agrupación a mas alto nivel que muestra el tipo de debito automá\
+        tico se trata (Tarjeta o Cuenta)"
+      dataType:
+        type: "String"
+    - name: "nombre_proveedor"
+      description: "Nombre del proveedor del servicio."
+      dataType:
+        type: "String"
+    - name: "tipo_producto_debito_automatico"
+      description: "En el caso de tarjetas define que tipo de tarjetas y en el caso\
+        \ de cuentas el capitulo del tipo de servicio."
+      dataType:
+        type: "String"
+    - name: "identificador_servicio"
+      description: "Código que identifica la contratación en el proveedor. Este có\
+        digo es único para cada proveedor pero el código se puede replicar en varios\
+        \ proveedores."
+      dataType:
+        type: "String"
+    - name: "usuario_tfc_vendedor"
+      description: "Usuario asignado para acceder a TFC que tiene el vendedor."
+      dataType:
+        type: "String"
+    - name: "usuario_banco_vendedor"
+      description: "Usuario windows del funcionario que atendió al cliente."
+      dataType:
+        type: "String"
+    - name: "fecha_alta"
+      description: "Fecha de alta del contrato en el sistema de débitos automáticos."
+      dataType:
+        type: "Date"
+    - name: "fecha_baja"
+      description: "Fecha de baja del contrato en el sistema de débitos automáticos."
+      dataType:
+        type: "Date"
+    - name: "esta_activo"
+      description: "Indica si el debito automático esta activo."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_sucursal_cuenta_cargo_pesos"
+      description: "Código de la sucursal de la cuenta del cliente"
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_cargo_pesos"
+      description: "Numero de cuenta del cliente para los cobros que se hagan en pesos."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta_cargo_dolares"
+      description: "Código de la sucursal de la cuenta del cliente para los cobros\
+        \ que se hagan en dólares."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_cargo_dolares"
+      description: "Numero de cuenta del cliente para los cobros que se hagan en dó\
+        lares."
+      dataType:
+        type: "String"
+    - name: "monto_abonado_dolares"
+      description: "Importe abonado en dólares por este debito automático para el\
+        \  AAAAMM definido."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_abonado_pesos"
+      description: "Importe abonado en pesos por este debito automático para el  AAAAMM\
+        \ definido."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "monto_abonado_arbitrado_dolares"
+      description: "Importe total abonado en pesos y dólares arbitrado a pesos por\
+        \ este debito automático para el  AAAAMM definido."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "cantidad_de_pagos"
+      description: "Cantidad de pagos realizados por este debito automático."
+      dataType:
+        type: "Bigint"
+    type: "table"
+  - name: "productos_inversiones_inventario"
+    description: ""
+    identifier: "productos_inversiones_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "numero_contrato_inversiones"
+      description: "Código interno del sistema dynatech que identifica la cuenta del\
+        \ cliente."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_valor"
+      description: "Código del instrumento de inversión."
+      dataType:
+        type: "String"
+    - name: "valor_nominal"
+      description: "Valor nominal de la posición."
+      dataType:
+        type: "Decimal(23, 5)"
+    - name: "moneda_valor"
+      description: "Moneda en la cual esta emitida el instrumento."
+      dataType:
+        type: "String"
+    - name: "precio_valor"
+      description: "Precio actual del instrumento en el mercado."
+      dataType:
+        type: "Decimal(19, 5)"
+    - name: "valor_efectivo_moneda_origen"
+      description: "Posición valuada al precio de mercado en moneda de origen."
+      dataType:
+        type: "Decimal(23, 5)"
+    - name: "valor_efectivo_arbitrado_dolares"
+      description: "Posición valuada al precio de mercado y arbitrada a dólares."
+      dataType:
+        type: "Decimal(19, 5)"
+    - name: "interes_corrido_moneda_origen"
+      description: "Interés generado hasta el momento y no pagado expresado en moneda\
+        \ de origen."
+      dataType:
+        type: "Decimal(19, 5)"
+    - name: "interes_corrido_arbitrado_dolares"
+      description: "Interés generado hasta el momento y no pagado expresado en dó\
+        lares."
+      dataType:
+        type: "Decimal(19, 5)"
+    - name: "estado_valor"
+      description: "Indica si el valor esta disponible para transaccionar o presenta\
+        \ algún bloqueo."
+      dataType:
+        type: "String"
+    - name: "tipo_precio"
+      description: "Indica si el precio es sobre la base de un nominal o es un precio\
+        \ a multiplicar por la cantidad."
+      dataType:
+        type: "String"
+    - name: "codigo_tipo_valor"
+      description: "Código de la familia en la cual se agrupa el instrumento."
+      dataType:
+        type: "String"
+    - name: "nombre_valor"
+      description: "Descripción completa del instrumento."
+      dataType:
+        type: "String"
+    - name: "saldo_en_garantia"
+      description: "Indica que valor nominal del instrumento esta bloqueado en garantí\
+        a de otra operación."
+      dataType:
+        type: "Decimal(19, 5)"
+    - name: "codigo_especie_valor"
+      description: "Código que agrupa a un nivel de detalle inferior a codigo_tipo_valor\
+        \ a los instrumentos."
+      dataType:
+        type: "String"
+    - name: "fecha_vencimiento_valor"
+      description: "Fecha en la cual el instrumento vence, recibiendo el cliente el\
+        \ valor nominal."
+      dataType:
+        type: "Date"
+    - name: "precio_promedio_ponderado"
+      description: "Es el precio calculado como promedio ponderado de los precios\
+        \ de compra."
+      dataType:
+        type: "Decimal(15, 6)"
+    - name: "req_complejidad"
+      description: "Métricas de riesgo (Risk Equivalent), complejidad del instrumento."
+      dataType:
+        type: "String"
+    - name: "req_aum"
+      description: "Métricas de riesgo (Risk Equivalent), aum del instrumento."
+      dataType:
+        type: "String"
+    - name: "req_liquidez"
+      description: "Métricas de riesgo (Risk Equivalent), liquidez del instrumento."
+      dataType:
+        type: "String"
+    - name: "req_plazo"
+      description: "Métricas de riesgo (Risk Equivalent), plazo del instrumento."
+      dataType:
+        type: "String"
+    - name: "req_porcentaje"
+      description: "Porcentaje de REQ aplicable al instrumento."
+      dataType:
+        type: "Decimal(10, 5)"
+    - name: "req_categoria_valor"
+      description: "REQ de la categoría del valor."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Numero de contrato asignado por Altair para el instrumento."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_inversiones_personas"
+    description: ""
+    identifier: "productos_inversiones_personas"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "numero_contrato_inversiones"
+      description: "Código interno del sistema dynatech que identifica la cuenta del\
+        \ cliente."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "es_primer_titular"
+      description: "Identifica si el cliente es el primer titular del contrato."
+      dataType:
+        type: "Boolean"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "fecha_alta_titular"
+      description: "Fecha en la cual se dio de alta el titular en el contrato."
+      dataType:
+        type: "Date"
+    - name: "estado_persona"
+      description: "Estado de la persona"
+      dataType:
+        type: "String"
+    - name: "fecha_inicio_w8"
+      description: "Fecha en la cual comienza la vigencia del W8."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_w8"
+      description: "Fecha en la cual finaliza la vigencia del W8."
+      dataType:
+        type: "Date"
+    - name: "estado_w8"
+      description: "Estado actual del W8 en el sistema (Vencido, Vigente)"
+      dataType:
+        type: "String"
+    - name: "fecha_inicio_3103"
+      description: "Fecha en la cual comienza la vigencia del 3103."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_3103"
+      description: "Fecha en la cual finaliza la vigencia del 3103."
+      dataType:
+        type: "Date"
+    - name: "estado_3103"
+      description: "Estado actual del 3103 en el sistema (Vencido, Vigente)"
+      dataType:
+        type: "String"
+    - name: "fecha_inicio_306"
+      description: "Fecha en la cual comienza la vigencia del 306."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento_306"
+      description: "Fecha en la cual finaliza la vigencia del 306."
+      dataType:
+        type: "Date"
+    - name: "estado_306"
+      description: "Estado actual del 306 en el sistema (Vencido, Vigente)"
+      dataType:
+        type: "String"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_pago_proveedores_transacciones"
+    description: ""
+    identifier: "productos_pago_proveedores_transacciones"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_transaccion"
+      description: "Fecha en la cual se realizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "id_registro"
+      description: "Código asignado por altair para la transacción."
+      dataType:
+        type: "String"
+    - name: "id_orden"
+      description: "Id de la orden asignado por BOCM."
+      dataType:
+        type: "Integer"
+    - name: "id_pago"
+      description: "Id del pago asignado por BOCM."
+      dataType:
+        type: "Integer"
+    - name: "fuente"
+      description: "Muestra el sistema origen del cual se capturo el pago de sueldo."
+      dataType:
+        type: "String"
+    - name: "sistema_pago"
+      description: "Indica el sistema de pago utilizado para realizar la transaccion."
+      dataType:
+        type: "String"
+    - name: "grupo_tipo_transaccion_cuenta"
+      description: "Indica el tipo de transaccion realizada. El mismo es calculado\
+        \ en base al codigo de codigo_tipo_transaccion_cuenta."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta_pagador"
+      description: "Código de la sucursal de la cuenta del cliente que realiza el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta_pagador"
+      description: "Moneda de la cuenta del cliente que realiza el pago."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_pagador"
+      description: "Numero de cuenta del cliente que realiza el pago."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_pagador"
+      description: "Identificador único a nivel local de la persona que realiza el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta_cobrador"
+      description: "Código de la sucursal de la cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta_cobrador"
+      description: "Moneda de la cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta_cobrador"
+      description: "Numero de cuenta del cliente que recibe el pago."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_cobrador"
+      description: "Identificador único a nivel local de la persona que recibe el\
+        \ pago."
+      dataType:
+        type: "String"
+    - name: "banco_cobrador"
+      description: "Banco al cual es enviado el pago."
+      dataType:
+        type: "Integer"
+    - name: "monto_transaccion_moneda_origen"
+      description: "Monto de la transacción expresado en la moneda de origen."
+      dataType:
+        type: "Decimal(23, 2)"
+    - name: "monto_transaccion_arbitrado_dolares"
+      description: "Monto de la transacción arbitrado a dólares."
+      dataType:
+        type: "Decimal(24, 2)"
+    type: "table"
+  - name: "productos_descuento_documentos_inventario"
+    description: ""
+    identifier: "productos_descuento_documentos_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_comercial"
+      description: "Código de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_comercial"
+      description: "Nombre de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "codigo_actividad_bcu"
+      description: "Código actividad del BCU, se utiliza el código CIIU (Clasificació\
+        n Interfacial Industrial Uniforme) del cliente en el BCU."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Número de contrato del crédito."
+      dataType:
+        type: "String"
+    - name: "fecha_valor"
+      description: "Es la fecha valor con la cual fue cargado el formulario."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento"
+      description: "Fecha de vencimiento del crédito."
+      dataType:
+        type: "Date"
+    - name: "codigo_sucursal_operacion"
+      description: "Código de la sucursal de la operación."
+      dataType:
+        type: "String"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "secuencia_contrato"
+      description: "Numero de secuencia asociado al contrato. Varía su uso en funció\
+        n del tipo de producto"
+      dataType:
+        type: "String"
+    - name: "descripcion_producto"
+      description: "Descripción del codigo_producto."
+      dataType:
+        type: "String"
+    - name: "codigo_destino"
+      description: "Código que identifica el destino de los fondos."
+      dataType:
+        type: "String"
+    - name: "moneda_contable"
+      description: "Es la moneda en la que queda contabilizado el saldo contable del\
+        \ contrato"
+      dataType:
+        type: "String"
+    - name: "saldo_moneda_origen"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        )"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_arbitrado_pesos"
+      description: "Saldo del registro arbitrado a UYU."
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "saldo_arbitrado_dolares"
+      description: "Saldo del registro arbitrado a USD."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "dias_atraso"
+      description: "Cantidad de días de atraso del contrato"
+      dataType:
+        type: "Integer"
+    - name: "categoria_BCU"
+      description: "Categoría para el Banco Central"
+      dataType:
+        type: "String"
+    - name: "tasa_contable"
+      description: "Tasa contable del crédito."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "tipo_tasa"
+      description: "Tipo de tasa (Ej. mora, estándar)"
+      dataType:
+        type: "String"
+    - name: "tipo_calculo_interes"
+      description: "Detalla si la tasa es Lineal o Compuesta"
+      dataType:
+        type: "String"
+    - name: "plazo_contractual"
+      description: "Plazo en dias entre la fecha_valor y fecha_vencimiento"
+      dataType:
+        type: "Integer"
+    - name: "plazo_residual"
+      description: "Plazo restante en dias hasta el vencimiento de la operacion"
+      dataType:
+        type: "Integer"
+    - name: "codigo_tipo_partida"
+      description: "Indica si el contrato es de Intereses(I), Capital (K), Previsiones(P)"
+      dataType:
+        type: "String"
+    - name: "codigo_modulo_origen"
+      description: "Define el modulo que informo el registro"
+      dataType:
+        type: "String"
+    - name: "cuenta_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ la cuenta contable"
+      dataType:
+        type: "String"
+    - name: "sector_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el sector contable"
+      dataType:
+        type: "String"
+    - name: "capitulo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el capitulo contable"
+      dataType:
+        type: "String"
+    - name: "grupo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el grupo contable"
+      dataType:
+        type: "String"
+    - name: "rubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el rubro contable"
+      dataType:
+        type: "String"
+    - name: "plazo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el plazo contable"
+      dataType:
+        type: "String"
+    - name: "subrubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el subrubro contable"
+      dataType:
+        type: "String"
+    - name: "correlativo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el correlativo contable"
+      dataType:
+        type: "String"
+    - name: "descripcion_cuenta_contable"
+      description: "Descripcion de la cuenta contable"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_cuentas_inventario"
+    description: ""
+    identifier: "productos_cuentas_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "descripcion_tipo_relacion"
+      description: "Descripción del codigo_tipo_relacion"
+      dataType:
+        type: "String"
+    - name: "numero_ordinal"
+      description: "Numero de ordinal de la relación dentro del contrato."
+      dataType:
+        type: "Integer"
+    - name: "codigo_estado_relacion_persona_contrato"
+      description: "Identifica el estado de la relación (A = Activa / C = Cancelada)"
+      dataType:
+        type: "String"
+    - name: "es_primer_titular"
+      description: "Identifica si el cliente es primer titular del la cuenta."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "tipo_cuenta"
+      description: "Flag que indica el tipo de producto, CC = CuentaCorriente , CA\
+        \ = Caja de Ahorro"
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta"
+      description: "Código de la sucursal de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Número de contrato del crédito."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta"
+      description: "Moneda de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "plan_comisiones"
+      description: "Condición económica de la cuenta. Esta define los costos que se\
+        \ cobran por las distintas operativas."
+      dataType:
+        type: "String"
+    - name: "fecha_alta"
+      description: "Fecha de alta de la cuenta en el sistema."
+      dataType:
+        type: "Date"
+    - name: "codigo_estado_cuenta"
+      description: "Codigo que identifica el estado que se encuentra la cuenta, A=Aceptada,\
+        \ C=Cancelada, S=Suspendida, X=Clausurada, R= Rechazada."
+      dataType:
+        type: "String"
+    - name: "es_bloqueada"
+      description: "Indicador que muestra si la cuenta esta bloqueada."
+      dataType:
+        type: "Boolean"
+    - name: "bloqueo_total_abono"
+      description: "Indicador que muestra si la cuenta esta bloqueada para abonos."
+      dataType:
+        type: "Boolean"
+    - name: "bloqueo_total_cargo"
+      description: "Indicador que muestra si la cuenta esta bloqueada para cargos."
+      dataType:
+        type: "Boolean"
+    - name: "codigo_motivo_bloqueo"
+      description: "Codigo que indica por que se bloqueo la cuenta."
+      dataType:
+        type: "String"
+    - name: "fecha_bloqueo"
+      description: "Fecha en la cual fue bloqueada la cuenta."
+      dataType:
+        type: "Date"
+    - name: "es_inmovilizada"
+      description: "Indicador si la cuenta esta inmobilizada o no."
+      dataType:
+        type: "Boolean"
+    - name: "fecha_inmovilizada"
+      description: "Fecha en la cual fue inmovilizada la cuenta."
+      dataType:
+        type: "Date"
+    - name: "codigo_motivo_cancelacion"
+      description: "Codigo que indica por que se cancelo la cuenta."
+      dataType:
+        type: "String"
+    - name: "fecha_cancelacion"
+      description: "Fecha en la cual fue cancelada la cuenta."
+      dataType:
+        type: "Date"
+    - name: "fecha_cierre"
+      description: "Fecha en la cual fue cerrada la cuenta."
+      dataType:
+        type: "Date"
+    - name: "fecha_ultima_transaccion"
+      description: "Fecha en la cual el contrato tuvo su ultima transacción."
+      dataType:
+        type: "Date"
+    - name: "cobra_sueldo"
+      description: "Indicador que muestra si la cuenta tiene movimientos de cobro\
+        \ de sueldo, dentro de los últimos 3 meses"
+      dataType:
+        type: "Boolean"
+    - name: "saldo_moneda_origen"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        )"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_arbitrado_dolares"
+      description: "Saldo del registro arbitrado a USD."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "tipo_tasa"
+      description: "Tipo de tasa utilizada para pagarle por los saldos en cuenta al\
+        \ cliente."
+      dataType:
+        type: "String"
+    - name: "tasa_contable"
+      description: "Tasa contable de la cuenta."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "tasa_contable_minima"
+      description: "Tasa contable mínima asignada al contrato."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "tasa_contable_maxima"
+      description: "Tasa contable máxima asignada al contrato."
+      dataType:
+        type: "Decimal(19, 6)"
+    type: "table"
+  - name: "productos_tpv_transacciones"
+    description: ""
+    identifier: "productos_tpv_transacciones"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_transaccion"
+      description: "Fecha en la cual se realizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "merchant"
+      description: "Identifica el merchat que realizo el pago al comercio."
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_cuenta"
+      description: "Código de la sucursal de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "numero_cuenta"
+      description: "Numero de cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta"
+      description: "Moneda de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "moneda_transaccion"
+      description: "Moneda la cual fue realizada la transacción."
+      dataType:
+        type: "String"
+    - name: "monto_transaccion_moneda_origen"
+      description: "Monto de la transacción expresado en la moneda de origen."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "monto_transaccion_arbitrado_dolares"
+      description: "Monto de la transacción arbitrado a dólares."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "codigo_tipo_transaccion_cuenta"
+      description: "Código que identifica el tipo de transacción. Este código puede\
+        \ ser cruzado con la tabla BGDTCOO."
+      dataType:
+        type: "String"
+    - name: "datos_adicionales_transaccion"
+      description: "Datos adicionales capturados para la transacción."
+      dataType:
+        type: "String"
+    - name: "numero_transaccion"
+      description: "Clave unica creada con 'CTA' + ENTIDAD + CENTRO_ALTA + CUENTA\
+        \ + DIVISA + NUMER_MOV"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_sobregiros_inventario"
+    description: ""
+    identifier: "productos_sobregiros_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_operacion"
+      description: "Código de la sucursal de la operación."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Número de contrato."
+      dataType:
+        type: "String"
+    - name: "moneda_contrato"
+      description: "Moneda del contrato."
+      dataType:
+        type: "String"
+    - name: "sobregiro_autorizado_arbitrado_dolares"
+      description: "Consumo de línea de sobregiro autorizada arbitrado en dólares."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "sobregiro_autorizado_moneda_origen"
+      description: "Consumo de línea de sobregiro autorizada expresado en moneda de\
+        \ origen."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "sobregiro_no_autorizado_arbitrado_dolares"
+      description: "Sobregiro realizado sin línea autorizada arbitrado en dólares."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "sobregiro_no_autorizado_moneda_origen"
+      description: "Sobregiro realizado sin línea autorizada expresado en moneda de\
+        \ origen."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "sobregiro_disponible_arbitrado_dolares"
+      description: "Línea de sobregiro disponible arbitrada en dólares."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "sobregiro_disponible_moneda_origen"
+      description: "Línea de sobregiro disponible expresada en moneda de origen."
+      dataType:
+        type: "Decimal(23, 4)"
+    - name: "acuerdo_sobregiro_arbitrado_dolares"
+      description: "Línea de sobregiro autorizada arbitrada a dólares."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "acuerdo_sobregiro_moneda_origen"
+      description: "Línea de sobregiro autorizada en moneda de origen."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "fecha_vencimiento_linea"
+      description: "Fecha de vencimiento de la línea de sobregiro."
+      dataType:
+        type: "Date"
+    type: "table"
+  - name: "productos_valores_al_cobro_inventario"
+    description: ""
+    identifier: "productos_valores_al_cobro_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "fecha_dato"
+      description: "Fecha en la cual se genero el dato."
+      dataType:
+        type: "Date"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_segmento"
+      description: "Código del Segmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_subsegmento"
+      description: "Código del SubSegmento de la Persona"
+      dataType:
+        type: "String"
+    - name: "codigo_oficial_comercial"
+      description: "Código de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "nombre_oficial_comercial"
+      description: "Nombre de gestor de relación comercial"
+      dataType:
+        type: "String"
+    - name: "codigo_actividad_bcu"
+      description: "Código actividad del BCU, se utiliza el código CIIU (Clasificació\
+        n Interfacial Industrial Uniforme) del cliente en el BCU."
+      dataType:
+        type: "String"
+    - name: "numero_contrato"
+      description: "Número de contrato del crédito."
+      dataType:
+        type: "String"
+    - name: "fecha_valor"
+      description: "Es la fecha valor con la cual fue cargado el formulario."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento"
+      description: "Fecha de vencimiento del crédito."
+      dataType:
+        type: "Date"
+    - name: "codigo_sucursal_operacion"
+      description: "Código de la sucursal de la operación."
+      dataType:
+        type: "String"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "secuencia_contrato"
+      description: "Numero de secuencia asociado al contrato. Varía su uso en funció\
+        n del tipo de producto"
+      dataType:
+        type: "String"
+    - name: "descripcion_producto"
+      description: "Descripción del codigo_producto."
+      dataType:
+        type: "String"
+    - name: "codigo_destino"
+      description: "Código que identifica el destino de los fondos."
+      dataType:
+        type: "String"
+    - name: "moneda_contable"
+      description: "Es la moneda en la que queda contabilizado el saldo contable del\
+        \ contrato"
+      dataType:
+        type: "String"
+    - name: "saldo_moneda_origen"
+      description: "Saldo del registro expresado en la moneda de origen (\"moneda_saldo\"\
+        )"
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "saldo_arbitrado_pesos"
+      description: "Saldo del registro arbitrado a UYU."
+      dataType:
+        type: "Decimal(38, 4)"
+    - name: "saldo_arbitrado_dolares"
+      description: "Saldo del registro arbitrado a USD."
+      dataType:
+        type: "Decimal(19, 2)"
+    - name: "dias_atraso"
+      description: "Cantidad de días de atraso del contrato"
+      dataType:
+        type: "Integer"
+    - name: "categoria_BCU"
+      description: "Categoría para el Banco Central"
+      dataType:
+        type: "String"
+    - name: "tasa_contable"
+      description: "Tasa contable del crédito."
+      dataType:
+        type: "Decimal(19, 6)"
+    - name: "tipo_tasa"
+      description: "Tipo de tasa (Ej. mora, estándar)"
+      dataType:
+        type: "String"
+    - name: "tipo_calculo_interes"
+      description: "Detalla si la tasa es Lineal o Compuesta"
+      dataType:
+        type: "String"
+    - name: "plazo_contractual"
+      description: "Plazo en dias entre la fecha_valor y fecha_vencimiento"
+      dataType:
+        type: "Integer"
+    - name: "plazo_residual"
+      description: "Plazo restante en dias hasta el vencimiento de la operacion"
+      dataType:
+        type: "Integer"
+    - name: "codigo_tipo_partida"
+      description: "Indica si el contrato es de Intereses(I), Capital (K), Previsiones(P)"
+      dataType:
+        type: "String"
+    - name: "codigo_modulo_origen"
+      description: "Define el modulo que informo el registro"
+      dataType:
+        type: "String"
+    - name: "cuenta_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ la cuenta contable"
+      dataType:
+        type: "String"
+    - name: "sector_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el sector contable"
+      dataType:
+        type: "String"
+    - name: "capitulo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el capitulo contable"
+      dataType:
+        type: "String"
+    - name: "grupo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el grupo contable"
+      dataType:
+        type: "String"
+    - name: "rubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el rubro contable"
+      dataType:
+        type: "String"
+    - name: "plazo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el plazo contable"
+      dataType:
+        type: "String"
+    - name: "subrubro_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el subrubro contable"
+      dataType:
+        type: "String"
+    - name: "correlativo_contable"
+      description: "Nomeclatura del Banco Central para registrar en la contabilidad\
+        \ el correlativo contable"
+      dataType:
+        type: "String"
+    - name: "descripcion_cuenta_contable"
+      description: "Descripcion de la cuenta contable"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_cuentas_transacciones"
+    description: ""
+    identifier: "productos_cuentas_transacciones"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+      - "pipeline:O3090026_operacionales_crm_matriz_de_servicios"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "numero_transaccion"
+      description: "Clave unica creada con 'CTA' + ENTIDAD + CENTRO_ALTA + CUENTA\
+        \ + DIVISA + NUMER_MOV"
+      dataType:
+        type: "String"
+    - name: "codigo_tipo_transaccion_cuenta"
+      description: "Código que identifica el tipo de transacción. Este código puede\
+        \ ser cruzado con la tabla BGDTCOO."
+      dataType:
+        type: "String"
+    - name: "descripcion_tipo_transaccion_cuenta"
+      description: "Descripción del codigo_tipo_transaccion_cuenta."
+      dataType:
+        type: "String"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "fecha_transaccion"
+      description: "Fecha en la cual se realizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "fecha_contabilizacion"
+      description: "Es la fecha en la cual se contabilizo la transacción."
+      dataType:
+        type: "Date"
+    - name: "codigo_sucursal_cuenta"
+      description: "Código de la sucursal de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "codigo_producto"
+      description: "Identifica el código del producto. Código de la tabla TCDTGEN_0111"
+      dataType:
+        type: "String"
+    - name: "codigo_subproducto"
+      description: "Identifica el código del subproducto. Código de la tabla TCDTGEN_0214"
+      dataType:
+        type: "String"
+    - name: "numero_cuenta"
+      description: "Numero de cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "moneda_cuenta"
+      description: "Moneda de la cuenta del cliente."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods"
+      description: "Identificador único a nivel local de la persona"
+      dataType:
+        type: "String"
+    - name: "codigo_sucursal_transaccion"
+      description: "Código de la sucursal en la cual se realizo la transacción."
+      dataType:
+        type: "String"
+    - name: "moneda_transaccion"
+      description: "Moneda la cual fue realizada la transacción."
+      dataType:
+        type: "String"
+    - name: "monto_transaccion_moneda_origen"
+      description: "Monto de la transacción expresado en la moneda de origen."
+      dataType:
+        type: "Decimal(23, 2)"
+    - name: "monto_transaccion_arbitrado_pesos"
+      description: "Monto de la transacción arbitrado a pesos."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "monto_transaccion_arbitrado_dolares"
+      description: "Monto de la transacción arbitrado a dólares."
+      dataType:
+        type: "Decimal(24, 2)"
+    - name: "forma_pago_cobro"
+      description: "Identificador que marca el canal en el cual se realizo la operació\
+        n."
+      dataType:
+        type: "String"
+    - name: "numero_referencia_transaccion"
+      description: "Numero de referencia cargado para la transacción."
+      dataType:
+        type: "String"
+    - name: "numero_referencia_movimiento"
+      description: "Numero de referencia cargado para el movimiento."
+      dataType:
+        type: "String"
+    - name: "cheque"
+      description: "Numero del cheque utilizado para la transaccion."
+      dataType:
+        type: "String"
+    - name: "usuario_tfc_transaccion"
+      description: "Numero de usuario TFC de la persona que cargo la transacción."
+      dataType:
+        type: "String"
+    - name: "terminal_transaccion"
+      description: "Código de terminal en la cual se cargo la transacción."
+      dataType:
+        type: "String"
+    - name: "datos_adicionales_transaccion"
+      description: "Datos adicionales capturados para la transacción."
+      dataType:
+        type: "String"
+    - name: "descripcion_comercio"
+      description: "Descripción del comercio donde se realizo la transacción."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "productos_garantias_inventario"
+    description: ""
+    identifier: "productos_garantias_inventario"
+    config:
+      tags:
+      - "pipeline:O3090025_operacionales_crm_matriz_de_productos"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "numero_garantia"
+      description: "Número único que identifica la garantía en Altair."
+      dataType:
+        type: "Integer"
+    - name: "codigo_categoria_garantia"
+      description: "Código que identifica de que tipo de garantía se trata."
+      dataType:
+        type: "String"
+    - name: "descripcion_codigo_garantia_larga"
+      description: "Descripción completa del campo codigo_categoria_garantia."
+      dataType:
+        type: "String"
+    - name: "descripcion_codigo_garantia_corta"
+      description: "Descripción abreviada del campo codigo_categoria_garantia."
+      dataType:
+        type: "String"
+    - name: "fecha_alta"
+      description: "Fecha de alta de la garantía."
+      dataType:
+        type: "Date"
+    - name: "fecha_vencimiento"
+      description: "Fecha de vencimiento de la garantía."
+      dataType:
+        type: "Date"
+    - name: "fecha_activa"
+      description: "Fecha desde cuando esta activa la garantía."
+      dataType:
+        type: "Date"
+    - name: "moneda_garantia"
+      description: "Moneda en la cual se expresa el importe de la garantía."
+      dataType:
+        type: "String"
+    - name: "monto_limite_moneda_origen"
+      description: "Monto máximo que la garantía puede garantizar, expresado en moneda\
+        \ de origen."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "monto_disponible_moneda_origen"
+      description: "Monto disponible de la garantía para garantizar operaciones, expresado\
+        \ en moneda de origen."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "monto_aplicado_moneda_origen"
+      description: "Monto aplicado de la garantía para garantizar operaciones, expresado\
+        \ en moneda de origen."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "monto_limite_arbitrado_dolares"
+      description: "Monto máximo que la garantía puede garantizar, arbitrado a dó\
+        lares."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "monto_disponible_arbitrado_dolares"
+      description: "Monto disponible de la garantía para garantizar operaciones, arbitrado\
+        \ a dólares."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "monto_aplicado_arbitrado_dolares"
+      description: "Monto aplicado de la garantía para garantizar operaciones, arbitrado\
+        \ a dólares."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "idf_pers_ods_garantizante"
+      description: "idf_pers_ods de la persona que brinda la garantía. En caso de\
+        \ que haya más de un garantizante ver tabla PRODUCTOS_garantias_relacion_bien_cliente."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_garantizado"
+      description: "idf_pers_ods de la persona que esta cubierta con la garantía del\
+        \ registro. En caso de que haya más de un garantizante ver tabla PRODUCTOS_garantias_relacion_cliente."
+      dataType:
+        type: "String"
+    - name: "numero_bien"
+      description: "Identificador único que identifica el bien garantizante."
+      dataType:
+        type: "Integer"
+    - name: "codigo_bien"
+      description: "Código que identifica el tipo de bien garantizante."
+      dataType:
+        type: "String"
+    - name: "descripcion_bien"
+      description: "Descripción del campo codigo_bien."
+      dataType:
+        type: "String"
+    - name: "codigo_departamento"
+      description: "Código identificador del departamento donde se encuentra el bien."
+      dataType:
+        type: "String"
+    - name: "descripcion_departamento"
+      description: "Departamento donde se encuentra radicada la garantía."
+      dataType:
+        type: "String"
+    - name: "nombre_calle_hipoteca"
+      description: "Calle en la cual se encuentra radicada la garantía."
+      dataType:
+        type: "String"
+    - name: "numero_calle_hipoteca"
+      description: "Numero de puerta de donde se encuentra radicada la garantía."
+      dataType:
+        type: "String"
+    - name: "numero_apartamento_hipoteca"
+      description: "Numero de apartamento de la garantía."
+      dataType:
+        type: "String"
+    - name: "metros_totales"
+      description: "Metros totales del inmueble garantizante."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "metros_construidos"
+      description: "Metros construidos del inmueble garantizante."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "fecha_primera_tasacion"
+      description: "Fecha en la cual se realizó la primera tasación del inmueble."
+      dataType:
+        type: "Date"
+    - name: "primer_valor_comercial_arbitrado_dolares"
+      description: "Valor comercial arbitrado a dólares resultante de la primera tasació\
+        n."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "primer_valor_remate_arbitrado_dolares"
+      description: "Valor de remate arbitrado a dólares resultante de la primera tasació\
+        n."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "primer_valor_tasacion_arbitrado_dolares"
+      description: "Valor de la tasación arbitrado a dólares resultante de la primera\
+        \ tasación."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "fecha_ultima_tasacion"
+      description: "Fecha en la cual se realizó la ultima tasación del inmueble."
+      dataType:
+        type: "Date"
+    - name: "valor_comercial_arbitrado_dolares"
+      description: "Valor comercial arbitrado a dólares del inmueble."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "valor_contable_arbitrado_dolares"
+      description: "Valor contable arbitrado a dólares del inmueble."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "valor_ejecucion_arbitrado_dolares"
+      description: "Valor de ejecución arbitrado a dólares del inmueble."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "valor_remate_arbitrado_dolares"
+      description: "Valor de remate arbitrado a dólares del inmueble."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "valor_tasacion_arbitrado_dolares"
+      description: "Valor de la tasación arbitrado a dólares resultante de la ultima\
+        \ tasación."
+      dataType:
+        type: "Decimal(19, 4)"
+    - name: "codigo_estado_garantia"
+      description: "Código que identifica en que estado se encuentra la garantía."
+      dataType:
+        type: "String"
+    - name: "descripcion_estado_garantia"
+      description: "Descripción del campo codigo_estado_garantia."
+      dataType:
+        type: "String"
+    - name: "codigo_subestado_garantia"
+      description: "Código que identifica en que subestado se encuentra la garantí\
+        a."
+      dataType:
+        type: "String"
+    - name: "descripcion_subestado_garantia"
+      description: "Descripción del campo codigo_subestado_garantia."
+      dataType:
+        type: "String"
+    - name: "es_garantia_activa"
+      description: "Indicador booleano si la garantía esta activa o no."
+      dataType:
+        type: "Boolean"
+    type: "table"
+  - name: "PRODUCTOS_garantias_relacion_cliente"
+    description: ""
+    identifier: "PRODUCTOS_garantias_relacion_cliente"
+    columns:
+    - name: "ref_data_date_part"
+      description: "Fecha y hora en la cual fue buscada la información en origen."
+      dataType:
+        type: "Integer"
+    - name: "ref_timestamp_procesamiento"
+      description: "Fecha y hora en la cual fue procesada la información."
+      dataType:
+        type: "Timestamp"
+    - name: "AAAAMM"
+      description: "AAAAMM de la información"
+      dataType:
+        type: "String"
+    - name: "numero_garantia"
+      description: "Número único que identifica la garantía en Altair."
+      dataType:
+        type: "Integer"
+    - name: "codigo_relacion"
+      description: "Codigo de la relación entre el bien y el garantiazante. Cruza\
+        \ contra la tabla TCTDGEN_0399."
+      dataType:
+        type: "String"
+    - name: "idf_pers_ods_garantizado"
+      description: "idf_pers_ods de la persona que esta cubierta con la garantía del\
+        \ registro."
+      dataType:
+        type: "String"
+    - name: "fecha_alta_relacion"
+      description: "Fecha de alta de la relación bien - cliente."
+      dataType:
+        type: "Date"
+    - name: "fecha_baja_relacion"
+      description: "Fecha de baja de la relación bien - cliente."
+      dataType:
+        type: "Date"
+    - name: "numero_secuencial_cliente"
+      description: "Numero ordinal del cliente en la garantía."
+      dataType:
+        type: "Integer"
+    type: "table"

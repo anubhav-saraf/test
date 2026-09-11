@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "fecha_ultima_transaccion"
+  dataType:
+    type: "Date"
+- name: "fecha_primera_transaccion"
+  dataType:
+    type: "Date"
+- name: "fecha_activacion"
+  dataType:
+    type: "Date"
+- name: "banco_cuenta"
+  dataType:
+    type: "String"
+- name: "fecha_alta"
+  dataType:
+    type: "Date"
+- name: "documento_comercio"
+  dataType:
+    type: "String"
+- name: "monto_transacciones_mes_actual"
+  dataType:
+    type: "Decimal"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"

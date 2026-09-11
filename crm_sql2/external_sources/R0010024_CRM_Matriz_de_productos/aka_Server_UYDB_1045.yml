@@ -1,0 +1,12 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "pan_completo"
+  dataType:
+    type: "String"
+- name: "pan_hash"
+  dataType:
+    type: "String"

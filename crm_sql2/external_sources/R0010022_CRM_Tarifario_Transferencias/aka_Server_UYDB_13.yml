@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "costo_swift"
+  dataType:
+    type: "Double"
+- name: "descripcion_operacion"
+  dataType:
+    type: "String"
+- name: "porcentaje_costo_transferencia"
+  dataType:
+    type: "Decimal"
+- name: "costo_fijo_transferencia"
+  dataType:
+    type: "Double"
+- name: "costo_maximo_transferencia"
+  dataType:
+    type: "Decimal"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "costo_minimo_transferencia"
+  dataType:
+    type: "Decimal"
+- name: "tipo_comision"
+  dataType:
+    type: "String"

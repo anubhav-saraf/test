@@ -1,0 +1,36 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "aplicado_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "activa"
+  dataType:
+    type: "Boolean"
+- name: "disponible_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "descripcion_estado"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods_garantizante"
+  dataType:
+    type: "String"
+- name: "fecha_vencimiento"
+  dataType:
+    type: "String"
+- name: "descripcion_corta"
+  dataType:
+    type: "String"
+- name: "numero_garantia"
+  dataType:
+    type: "String"
+- name: "fecha_alta"
+  dataType:
+    type: "String"
+- name: "descripcion_subestado"
+  dataType:
+    type: "String"
+- name: "limite_arbitrado_dolares"
+  dataType:
+    type: "Decimal"

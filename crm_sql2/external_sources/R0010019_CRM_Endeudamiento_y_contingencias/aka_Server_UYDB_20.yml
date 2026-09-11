@@ -1,0 +1,57 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "fecha_valor"
+  dataType:
+    type: "Date"
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "saldo_arbitrado_pesos"
+  dataType:
+    type: "Decimal"
+- name: "codigo_sucursal_operacion"
+  dataType:
+    type: "String"
+- name: "saldo_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "codigo_subproducto"
+  dataType:
+    type: "String"
+- name: "categoria_BCU"
+  dataType:
+    type: "String"
+- name: "fecha_vencimiento"
+  dataType:
+    type: "Date"
+- name: "codigo_agrupacion_contable"
+  dataType:
+    type: "String"
+- name: "detalle_agrupacion_contable"
+  dataType:
+    type: "String"
+- name: "divisa"
+  dataType:
+    type: "String"
+- name: "codigo_destino"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "tasa_contable"
+  dataType:
+    type: "Decimal"
+- name: "saldo_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "codigo_producto"
+  dataType:
+    type: "String"
+- name: "divisa_contrato"
+  dataType:
+    type: "String"
+- name: "perimetro_gestion"
+  dataType:
+    type: "Double"

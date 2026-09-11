@@ -1,0 +1,15 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "motivo_cancelacion"
+  dataType:
+    type: "String"
+- name: "fecha_cancelacion"
+  dataType:
+    type: "Date"
+- name: "fecha_cierre"
+  dataType:
+    type: "Date"

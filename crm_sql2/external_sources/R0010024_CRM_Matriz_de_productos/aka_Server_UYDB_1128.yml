@@ -1,0 +1,48 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "numero_contrato"
+  dataType:
+    type: "String"
+- name: "saldo_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "codigo_subproducto"
+  dataType:
+    type: "String"
+- name: "subrubro_cuenta_contable"
+  dataType:
+    type: "String"
+- name: "codigo_agrupacion_contable"
+  dataType:
+    type: "String"
+- name: "rubro_cuenta_contable"
+  dataType:
+    type: "String"
+- name: "sector_cuenta_contable"
+  dataType:
+    type: "String"
+- name: "capitulo_cuenta_contable"
+  dataType:
+    type: "String"
+- name: "divisa"
+  dataType:
+    type: "String"
+- name: "codigo_destino"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "saldo_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "codigo_producto"
+  dataType:
+    type: "String"
+- name: "descripcion_producto"
+  dataType:
+    type: "String"
+- name: "perimetro_gestion"
+  dataType:
+    type: "Double"

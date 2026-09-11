@@ -1,0 +1,18 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "pan_hash"
+  dataType:
+    type: "String"
+- name: "tipo_transaccion"
+  dataType:
+    type: "String"
+- name: "monto_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

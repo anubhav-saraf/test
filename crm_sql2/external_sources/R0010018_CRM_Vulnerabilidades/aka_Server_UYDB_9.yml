@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "metrica"
+  dataType:
+    type: "String"
+- name: "codigo_vulnerabilidad"
+  dataType:
+    type: "Integer"
+- name: "fecha_inicio_vulnerabilidad"
+  dataType:
+    type: "Date"
+- name: "fecha_fin_vulnerabilidad"
+  dataType:
+    type: "Date"
+- name: "descripcion_vulnerabilidad"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "categoria_vulnerabilidad"
+  dataType:
+    type: "String"
+- name: "valor_metrica"
+  dataType:
+    type: "Decimal"

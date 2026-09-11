@@ -1,0 +1,9 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods"
+  dataType:
+    type: "Double"
+- name: "codigo_nuevo_oficial"
+  dataType:
+    type: "Double"

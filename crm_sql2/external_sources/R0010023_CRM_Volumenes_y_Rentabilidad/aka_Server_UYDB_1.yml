@@ -1,0 +1,27 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "saldo_arbitrado_dolares_primer_titular"
+  dataType:
+    type: "Decimal"
+- name: "saldo_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "codigo_agrupacion_contable"
+  dataType:
+    type: "String"
+- name: "saldo_moneda_origen_primer_titular"
+  dataType:
+    type: "Decimal"
+- name: "divisa"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "saldo_moneda_origen"
+  dataType:
+    type: "Decimal"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

@@ -1,0 +1,24 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "cantidad_empleados"
+  dataType:
+    type: "Double"
+- name: "codigo_plan"
+  dataType:
+    type: "String"
+- name: "sub_tipo_producto"
+  dataType:
+    type: "String"
+- name: "grupo_producto"
+  dataType:
+    type: "String"
+- name: "tipo_producto"
+  dataType:
+    type: "String"
+- name: "fecha_alta"
+  dataType:
+    type: "Date"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"

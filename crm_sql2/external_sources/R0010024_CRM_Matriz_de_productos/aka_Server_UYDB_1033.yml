@@ -1,0 +1,12 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "nombre_especie_valor"
+  dataType:
+    type: "String"
+- name: "nombre_tipo_valor"
+  dataType:
+    type: "String"
+- name: "codigo_valor"
+  dataType:
+    type: "String"

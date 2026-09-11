@@ -1,0 +1,44 @@
+# ==================
+# Project Details
+# ==================
+name: "CRM_sql_001_002"
+config-version: 2
+require-dbt-version:
+- ">=1.0.0"
+- "<2.0.0"
+version: "0.1"
+profile: "prophecy-default"
+
+# ==================
+# File Path Configs
+# ==================
+test-paths:
+- "tests"
+clean-targets:
+- "target"
+- "dbt_modules"
+- "logs"
+snapshot-paths:
+- "snapshots"
+seed-paths:
+- "seeds"
+packages-install-path: "dbt_packages"
+model-paths:
+- "models"
+- "prophecy-sources"
+log-path: "logs"
+macro-paths:
+- "macros"
+target-path: "target"
+
+# ==================
+# Variable Configs
+# ==================
+vars:
+  db_name: ""
+  schema_name: ""
+
+# ============
+# Misc
+# ============
+dispatch: []

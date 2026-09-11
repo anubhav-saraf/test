@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "O3090026_operacionales_crm_matriz_de_servicios__Table_1"
+  tags:
+  - "prophecy_temp"

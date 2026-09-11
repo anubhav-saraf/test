@@ -1,0 +1,15 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "idf_pers_ods_pagador"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods_cobrador"
+  dataType:
+    type: "String"
+- name: "importe_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "AAAAMM"
+  dataType:
+    type: "String"

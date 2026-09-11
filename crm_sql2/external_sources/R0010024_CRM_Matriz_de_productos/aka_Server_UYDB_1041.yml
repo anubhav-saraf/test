@@ -1,0 +1,15 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "AAAAMM"
+  dataType:
+    type: "String"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "merchant"
+  dataType:
+    type: "String"
+- name: "monto_arbitrado_dolares"
+  dataType:
+    type: "Decimal"

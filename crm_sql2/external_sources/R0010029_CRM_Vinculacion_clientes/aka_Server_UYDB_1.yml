@@ -1,0 +1,120 @@
+entityType: ""
+providerType: "Databricks"
+fields:
+- name: "puntos_descuento_documentos"
+  dataType:
+    type: "Integer"
+- name: "codigo_segmento"
+  dataType:
+    type: "String"
+- name: "es_loyal"
+  dataType:
+    type: "Boolean"
+- name: "puntos_comisiones_cuentas"
+  dataType:
+    type: "Integer"
+- name: "familia_hipoteca"
+  dataType:
+    type: "Boolean"
+- name: "puntos_activo"
+  dataType:
+    type: "Integer"
+- name: "es_activo"
+  dataType:
+    type: "Boolean"
+- name: "puntos_tc"
+  dataType:
+    type: "Integer"
+- name: "puntos_trading_cambio"
+  dataType:
+    type: "Integer"
+- name: "puntos_totales"
+  dataType:
+    type: "Integer"
+- name: "puntos_debitos_automaticos"
+  dataType:
+    type: "Integer"
+- name: "agrupacion_subsegmento"
+  dataType:
+    type: "String"
+- name: "cumple_familias_productos"
+  dataType:
+    type: "Boolean"
+- name: "puntos_pago_proveedores"
+  dataType:
+    type: "Integer"
+- name: "saldo_medio_pasivo_arbitrado_dolares"
+  dataType:
+    type: "Decimal"
+- name: "tiene_cuenta"
+  dataType:
+    type: "Boolean"
+- name: "puntos_valores_al_cobro"
+  dataType:
+    type: "Integer"
+- name: "volumen_negocio_arbitrado_dolares_3meses"
+  dataType:
+    type: "Decimal"
+- name: "puntos_pago_impuestos"
+  dataType:
+    type: "Integer"
+- name: "familia_ahorro"
+  dataType:
+    type: "Boolean"
+- name: "puntos_cantidad_pago_nominas"
+  dataType:
+    type: "Integer"
+- name: "puntos_comisiones_comex"
+  dataType:
+    type: "Integer"
+- name: "familia_seguro_coche"
+  dataType:
+    type: "Boolean"
+- name: "familia_tc"
+  dataType:
+    type: "Boolean"
+- name: "idf_pers_ods"
+  dataType:
+    type: "String"
+- name: "familia_seguro_hogar"
+  dataType:
+    type: "Boolean"
+- name: "puntos_cantidad_pago_proveedores"
+  dataType:
+    type: "Integer"
+- name: "puntos_digital"
+  dataType:
+    type: "Integer"
+- name: "familia_digital"
+  dataType:
+    type: "Boolean"
+- name: "puntos_tpv"
+  dataType:
+    type: "Integer"
+- name: "tiene_td"
+  dataType:
+    type: "Boolean"
+- name: "familia_debitos_automaticos"
+  dataType:
+    type: "Boolean"
+- name: "familia_seguro_vida_y_otros"
+  dataType:
+    type: "Boolean"
+- name: "codigo_subsegmento"
+  dataType:
+    type: "String"
+- name: "familia_credito_consumo"
+  dataType:
+    type: "Boolean"
+- name: "familia_inversiones"
+  dataType:
+    type: "Boolean"
+- name: "puntos_pasivo"
+  dataType:
+    type: "Integer"
+- name: "cumple_compras_y_pagos"
+  dataType:
+    type: "Boolean"
+- name: "puntos_pago_nomina"
+  dataType:
+    type: "Integer"
