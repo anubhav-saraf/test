@@ -39,8 +39,27 @@ Limit_1 AS (
   
   LIMIT 10
 
+),
+
+FindDuplicates_1 AS (
+
+  {{
+    prophecy_basics.FindDuplicates(
+      ['Limit_1'],
+      [],
+      '',
+      'unique',
+      '',
+      '',
+      '',
+      'allCols',
+      ['id', 'name'],
+      []
+    )
+  }}
+
 )
 
 SELECT *
 
-FROM Limit_1
+FROM FindDuplicates_1
