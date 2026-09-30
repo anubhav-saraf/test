@@ -58,8 +58,27 @@ FindDuplicates_1 AS (
     )
   }}
 
+),
+
+RecordID_1 AS (
+
+  {{
+    prophecy_basics.RecordID(
+      ['FindDuplicates_1'],
+      'incremental_id',
+      'RecordID',
+      'string',
+      6,
+      1000,
+      'tableLevel',
+      'first_column',
+      [],
+      []
+    )
+  }}
+
 )
 
 SELECT *
 
-FROM FindDuplicates_1
+FROM RecordID_1

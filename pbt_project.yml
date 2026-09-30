@@ -23,14 +23,7 @@ functions:
   airflowFunctions: {}
   businessRules: {}
 subgraphs: {}
-sqlModels:
-  .prophecy/metadata/sqlmodels/standalone_model:
-    name: standalone_model
-    description: null
-    author: saraf.anubhav@prophecy.io
-    files:
-    - models/standalone_model.sql
-    createdAt: '2026-09-30 10:00:00'
+sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
